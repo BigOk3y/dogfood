@@ -428,7 +428,7 @@ nav .container ul li:hover{
 
 .bottom{
      width: 100%;
-    height: 950px;
+    height: 1100px;
      display: flex;
      flex-direction: column;
     justify-content: space-around;
@@ -482,27 +482,20 @@ nav .container ul li:hover{
 }
 
 .box-7{
-      width: 100%;
-    height: 480px;
+    width: 100%;
+    height: 450px;
     display: flex;
-    
     justify-content: space-between;
     align-items: center;
-   
-    
-    
 }
 
 .box-7a{
     width: 570px;
     height: 480px;
-    
-     display: flex;
-     flex-direction: column;
-    
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding-right: 60px;
 }
 

@@ -40,7 +40,7 @@ a{
 nav{
     background-color: #EE6F4B;
     height: 60px;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px #dc8871;
+    box-shadow: 1.5px 1.5px 10px 1.5px rgb(247, 192, 177);
 } 
 nav{
   position: fixed;
@@ -697,31 +697,14 @@ nav .container ul li:hover{
     .nav-toggle {
         display: flex;
     }
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #EE6F4B;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        z-index: 100;
-        padding: 10px 0;
-    }
-    .nav-links.open {
-        display: flex;
-    }
-    nav .container ul {
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-    }
-    nav .container ul li {
-        width: 100%;
-        margin-right: 0;
-        border-radius: 0;
-        height: 44px;
-    }
+    nav .container ul{
+    display: none;
+    width: 300px;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    
+}
 
     /* Hero heading */
     .box-1 {

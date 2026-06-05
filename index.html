@@ -19,7 +19,7 @@
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
+            <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
@@ -420,6 +420,7 @@
         var expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', String(!expanded));
         navLinks.classList.toggle('open');
+
     });
 </script>
 </body>

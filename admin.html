@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Manager – DogFood Co. (internal)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+    --orange: #EE6F4B; --orange-dark: #d45a37; --orange-light: #fdf1ed;
+    --dark: #1a1a1a; --mid: #444; --cream: #fff8f5; --white: #fff; --radius: 12px;
+}
+* { box-sizing: border-box; }
+body { font-family: "Inter Tight", sans-serif; background: var(--cream); color: var(--dark); margin: 0; padding: 0 0 80px; }
+header { background: var(--orange); color: #fff; padding: 20px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+header h1 { font-size: 1.25rem; margin: 0; }
+header p { margin: 2px 0 0; font-size: 0.85rem; opacity: 0.9; }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 24px; }
+.notice { background: var(--orange-light); border-left: 4px solid var(--orange); border-radius: 8px; padding: 16px 18px; font-size: 0.9rem; line-height: 1.6; margin-bottom: 24px; }
+.notice code { background: #fff; padding: 1px 6px; border-radius: 4px; }
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+button, .file-btn { font-family: inherit; font-size: 0.9rem; font-weight: 700; border: none; border-radius: 8px; padding: 10px 18px; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+button:active { transform: scale(0.97); }
+.btn-primary { background: var(--orange); color: #fff; }
+.btn-primary:hover { background: var(--orange-dark); }
+.btn-outline { background: #fff; color: var(--orange); border: 2px solid var(--orange); padding: 8px 16px; }
+.btn-danger { background: #fff; color: #d9432b; border: 2px solid #f3c8bf; }
+.btn-danger:hover { background: #fff5f3; }
+input[type=file] { display: none; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 18px rgba(0,0,0,0.06); }
+th, td { text-align: left; padding: 12px 14px; font-size: 0.87rem; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+th { background: #faf9f8; font-weight: 700; color: var(--mid); }
+tr:last-child td { border-bottom: none; }
+td img { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; }
+.row-actions { display: flex; gap: 8px; }
+.row-actions button { padding: 6px 12px; font-size: 0.8rem; }
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
+.modal-overlay.open { display: flex; }
+.modal { background: #fff; border-radius: 16px; max-width: 640px; width: 100%; max-height: 88vh; overflow-y: auto; padding: 28px; }
+.modal h2 { margin: 0 0 18px; font-size: 1.2rem; }
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 0.82rem; font-weight: 700; margin-bottom: 5px; color: var(--dark); }
+.field input, .field select, .field textarea { width: 100%; padding: 9px 12px; border: 1.5px solid #e2e2e2; border-radius: 8px; font-family: inherit; font-size: 0.88rem; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.size-row { display: grid; grid-template-columns: 1fr 1fr 90px 32px; gap: 8px; margin-bottom: 8px; align-items: center; }
+.size-row input { width: 100%; }
+.remove-size { background: #fceeec; color: #d9432b; border-radius: 6px; padding: 6px; font-size: 0.8rem; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+.hint { font-size: 0.78rem; color: #999; margin-top: 3px; }
+.empty { text-align: center; padding: 60px 20px; color: #999; }
+</style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>🐾 DogFood Co. — Product Manager</h1>
+        <p>Internal tool. Not linked from the public site.</p>
+    </div>
+    <div class="toolbar" style="margin:0;">
+        <label class="file-btn btn-outline" for="uploadFile">Load a products.json file</label>
+        <input type="file" id="uploadFile" accept="application/json">
+        <button class="btn-primary" id="downloadBtn">⬇ Download updated products.json</button>
+    </div>
+</header>
+
+<div class="wrap">
+    <div class="notice">
+        This page edits a local copy of <code>products.json</code> — the file the shop page reads to display products.
+        It tries to load <code>products.json</code> from this folder automatically. Add, edit, or remove products below,
+        then click <strong>Download updated products.json</strong> and upload that file to your web host in place of the old one
+        (or hand it to whoever manages the hosting). No coding or database needed.
+    </div>
+
+    <div class="toolbar">
+        <button class="btn-primary" id="addBtn">+ Add Product</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name (EN)</th>
+                <th>Name (AR)</th>
+                <th>Category</th>
+                <th>Price from</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="productTableBody"></tbody>
+    </table>
+    <div id="emptyState" class="empty" style="display:none;">No products yet. Click "Add Product" to create one.</div>
+</div>
+
+<!-- Product edit modal -->
+<div class="modal-overlay" id="editModal">
+    <div class="modal">
+        <h2 id="modalHeading">Add Product</h2>
+        <form id="productForm">
+            <div class="field">
+                <label>Product ID (unique, no spaces)</label>
+                <input type="text" id="f_id" required>
+                <div class="hint">e.g. p10 — used internally, never shown to customers.</div>
+            </div>
+            <div class="two-col">
+                <div class="field">
+                    <label>Name — English</label>
+                    <input type="text" id="f_name_en" required>
+                </div>
+                <div class="field">
+                    <label>Name — Arabic</label>
+                    <input type="text" id="f_name_ar" dir="rtl">
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="field">
+                    <label>Description — English</label>
+                    <textarea id="f_desc_en" rows="3"></textarea>
+                </div>
+                <div class="field">
+                    <label>Description — Arabic</label>
+                    <textarea id="f_desc_ar" rows="3" dir="rtl"></textarea>
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="field">
+                    <label>Category</label>
+                    <select id="f_category">
+                        <option value="dry">Dry Food</option>
+                        <option value="wet">Wet Food</option>
+                        <option value="supplement">Supplement</option>
+                        <option value="treat">Treats</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Image URL</label>
+                    <input type="url" id="f_image" placeholder="https://…">
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="field">
+                    <label>Badge text — English (optional)</label>
+                    <input type="text" id="f_badge_en" placeholder="e.g. Bestseller">
+                </div>
+                <div class="field">
+                    <label>Badge text — Arabic (optional)</label>
+                    <input type="text" id="f_badge_ar" dir="rtl">
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Sizes &amp; prices (QAR)</label>
+                <div id="sizesWrap"></div>
+                <button type="button" class="btn-outline" id="addSizeBtn" style="margin-top:6px;">+ Add size</button>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-outline" id="cancelBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Save Product</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+let data = { categories: [
+    { id: "dry", en: "Dry Food", ar: "طعام جاف" },
+    { id: "wet", en: "Wet Food", ar: "طعام رطب" },
+    { id: "supplement", en: "Supplement", ar: "مكمل غذائي" },
+    { id: "treat", en: "Treats", ar: "وجبات خفيفة" }
+], products: [] };
+let editingId = null;
+
+function renderTable() {
+    const body = document.getElementById("productTableBody");
+    const empty = document.getElementById("emptyState");
+    body.innerHTML = "";
+    if (!data.products.length) { empty.style.display = "block"; return; }
+    empty.style.display = "none";
+    data.products.forEach(p => {
+        const tr = document.createElement("tr");
+        const fromPrice = p.sizes && p.sizes[0] ? p.sizes[0].price : "-";
+        tr.innerHTML = `
+            <td><img src="${p.image || ''}" alt=""></td>
+            <td>${p.name.en}</td>
+            <td dir="rtl">${p.name.ar || ""}</td>
+            <td>${p.category}</td>
+            <td>QAR ${fromPrice}</td>
+            <td class="row-actions">
+                <button class="btn-outline" data-edit="${p.id}">Edit</button>
+                <button class="btn-danger" data-del="${p.id}">Delete</button>
+            </td>`;
+        body.appendChild(tr);
+    });
+    body.querySelectorAll("[data-edit]").forEach(b => b.addEventListener("click", () => openEdit(b.dataset.edit)));
+    body.querySelectorAll("[data-del]").forEach(b => b.addEventListener("click", () => {
+        if (confirm("Delete this product?")) {
+            data.products = data.products.filter(p => p.id !== b.dataset.del);
+            renderTable();
+        }
+    }));
+}
+
+function addSizeRow(label_en, label_ar, price) {
+    const wrap = document.getElementById("sizesWrap");
+    const row = document.createElement("div");
+    row.className = "size-row";
+    row.innerHTML = `
+        <input type="text" placeholder="Size (EN) e.g. 2 kg" class="size-en" value="${label_en || ''}">
+        <input type="text" placeholder="Size (AR)" dir="rtl" class="size-ar" value="${label_ar || ''}">
+        <input type="number" placeholder="Price" class="size-price" value="${price != null ? price : ''}">
+        <button type="button" class="remove-size">✕</button>`;
+    row.querySelector(".remove-size").addEventListener("click", () => row.remove());
+    wrap.appendChild(row);
+}
+
+function openAdd() {
+    editingId = null;
+    document.getElementById("modalHeading").textContent = "Add Product";
+    document.getElementById("productForm").reset();
+    document.getElementById("f_id").disabled = false;
+    document.getElementById("sizesWrap").innerHTML = "";
+    addSizeRow();
+    document.getElementById("editModal").classList.add("open");
+}
+
+function openEdit(id) {
+    const p = data.products.find(x => x.id === id);
+    if (!p) return;
+    editingId = id;
+    document.getElementById("modalHeading").textContent = "Edit Product";
+    document.getElementById("f_id").value = p.id;
+    document.getElementById("f_id").disabled = true;
+    document.getElementById("f_name_en").value = p.name.en || "";
+    document.getElementById("f_name_ar").value = p.name.ar || "";
+    document.getElementById("f_desc_en").value = p.desc.en || "";
+    document.getElementById("f_desc_ar").value = p.desc.ar || "";
+    document.getElementById("f_category").value = p.category || "dry";
+    document.getElementById("f_image").value = p.image || "";
+    document.getElementById("f_badge_en").value = p.badge ? (p.badge.en || "") : "";
+    document.getElementById("f_badge_ar").value = p.badge ? (p.badge.ar || "") : "";
+    document.getElementById("sizesWrap").innerHTML = "";
+    (p.sizes || []).forEach(s => addSizeRow(s.label.en, s.label.ar, s.price));
+    if (!p.sizes || !p.sizes.length) addSizeRow();
+    document.getElementById("editModal").classList.add("open");
+}
+
+document.getElementById("addBtn").addEventListener("click", openAdd);
+document.getElementById("cancelBtn").addEventListener("click", () => document.getElementById("editModal").classList.remove("open"));
+document.getElementById("addSizeBtn").addEventListener("click", () => addSizeRow());
+
+document.getElementById("productForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const id = document.getElementById("f_id").value.trim();
+    if (!id) return;
+    if (!editingId && data.products.some(p => p.id === id)) {
+        alert("A product with this ID already exists. Choose a unique ID.");
+        return;
+    }
+    const sizes = Array.from(document.querySelectorAll("#sizesWrap .size-row")).map(row => ({
+        label: {
+            en: row.querySelector(".size-en").value.trim(),
+            ar: row.querySelector(".size-ar").value.trim()
+        },
+        price: parseFloat(row.querySelector(".size-price").value) || 0
+    })).filter(s => s.label.en);
+
+    const badgeEn = document.getElementById("f_badge_en").value.trim();
+    const product = {
+        id,
+        category: document.getElementById("f_category").value,
+        image: document.getElementById("f_image").value.trim(),
+        badge: badgeEn ? { en: badgeEn, ar: document.getElementById("f_badge_ar").value.trim(), style: "" } : null,
+        name: { en: document.getElementById("f_name_en").value.trim(), ar: document.getElementById("f_name_ar").value.trim() },
+        desc: { en: document.getElementById("f_desc_en").value.trim(), ar: document.getElementById("f_desc_ar").value.trim() },
+        sizes: sizes,
+        weightNote: { en: "", ar: "" }
+    };
+
+    if (editingId) {
+        const idx = data.products.findIndex(p => p.id === editingId);
+        data.products[idx] = product;
+    } else {
+        data.products.push(product);
+    }
+    document.getElementById("editModal").classList.remove("open");
+    renderTable();
+});
+
+document.getElementById("downloadBtn").addEventListener("click", () => {
+    const out = { _readme: "This file powers the shop page. Edit with admin.html or by hand.", categories: data.categories, products: data.products };
+    const blob = new Blob([JSON.stringify(out, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = "products.json";
+    a.click();
+    URL.revokeObjectURL(url);
+});
+
+document.getElementById("uploadFile").addEventListener("change", e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+        try {
+            const parsed = JSON.parse(reader.result);
+            data.categories = parsed.categories || data.categories;
+            data.products = parsed.products || [];
+            renderTable();
+        } catch (err) {
+            alert("Could not read that file — please make sure it's a valid products.json.");
+        }
+    };
+    reader.readAsText(file);
+});
+
+// Try to auto-load products.json from the same folder (works when served over http/https)
+fetch("products.json").then(r => r.json()).then(parsed => {
+    data.categories = parsed.categories || data.categories;
+    data.products = parsed.products || [];
+    renderTable();
+}).catch(() => {
+    renderTable(); // start empty; user can use "Load a products.json file"
+});
+</script>
+</body>
+</html>

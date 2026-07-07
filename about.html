@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us – DogFood Co.</title>
+    <meta name="description" content="Founded by pet owners and vets in Qatar. Learn our story, meet the team, and see why 50,000+ dogs across the Gulf trust DogFood Co.">
+    <link rel="canonical" href="https://www.dogfoodco.qa/about.html">
+    <link rel="alternate" hreflang="en" href="https://www.dogfoodco.qa/about.html">
+    <link rel="alternate" hreflang="ar" href="https://www.dogfoodco.qa/about.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.dogfoodco.qa/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us – DogFood Co.">
+    <meta property="og:description" content="Founded by pet owners and vets in Qatar. Learn our story and meet the team.">
+    <meta property="og:url" content="https://www.dogfoodco.qa/about.html">
+    <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-i18n-page-title="about.title" data-i18n-meta-desc="about.meta_desc">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dogfoodco.qa/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.dogfoodco.qa/about.html"}
+  ]
+}
+</script>
 
 <!-- NAV -->
 <nav>
@@ -19,32 +39,33 @@
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Our Food</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="shop.html" class="nav-shop">Shop Now</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="shop.html" data-i18n="nav.shop">Our Food</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+            <li><a href="shop.html" class="nav-shop" data-i18n="nav.shopnow">Shop Now</a></li>
+            <li><button type="button" id="langToggle" class="lang-toggle" onclick="toggleLang()" aria-label="Switch language / تغيير اللغة"><span class="lang-globe" aria-hidden="true">🌐</span><span id="langToggleLabel">العربية</span></button></li>
         </ul>
     </div>
 </nav>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-    <p class="breadcrumb"><a href="index.html">Home</a> › About Us</p>
-    <h1>We Believe Dogs Deserve Better</h1>
-    <p>Founded by pet owners and vets who got tired of reading ingredient labels they couldn't pronounce.</p>
+    <p class="breadcrumb"><a href="index.html" data-i18n="shop.breadcrumb_home">Home</a> › <span data-i18n="about.breadcrumb_current">About Us</span></p>
+    <h1 data-i18n="about.hero_title">We Believe Dogs Deserve Better</h1>
+    <p data-i18n="about.hero_desc">Founded by pet owners and vets who got tired of reading ingredient labels they couldn't pronounce.</p>
 </div>
 
 <!-- OUR STORY -->
 <div class="container">
     <div class="about-intro reveal">
         <div class="about-intro-text">
-            <div class="section-label">Our Story</div>
-            <h2 class="section-title">Started in a kitchen.<br>Built on science.</h2>
-            <p>DogFood Co. was born in 2018 when our founder, Dr. Leila Nasser, watched her 8-year-old Labrador, Biscuit, struggle with chronic digestive issues despite eating "premium" commercial kibble. After months of research and consultation with veterinary nutritionists, she created a fresh-food formula from scratch — and Biscuit never looked back.</p>
-            <p>What began as weekend batches shared with neighbours' dogs quickly grew into a movement. Today, DogFood Co. serves over 50,000 dogs across Qatar and the Gulf, and every recipe still starts with the same question: <em>"Would Biscuit eat this?"</em></p>
-            <p>We're part of a community of dog lovers who believe that what goes into the bowl matters — and that real, whole ingredients shouldn't be a luxury.</p>
-            <a href="shop.html" class="btn btn-primary" style="margin-top:8px;">Explore Our Products →</a>
+            <div class="section-label" data-i18n="about.story_label">Our Story</div>
+            <h2 class="section-title" data-i18n="about.story_title">Started in a kitchen.<br>Built on science.</h2>
+            <p data-i18n="about.story_p1">DogFood Co. was born in 2018 when our founder, Dr. Leila Nasser, watched her 8-year-old Labrador, Biscuit, struggle with chronic digestive issues despite eating "premium" commercial kibble. After months of research and consultation with veterinary nutritionists, she created a fresh-food formula from scratch — and Biscuit never looked back.</p>
+            <p data-i18n="about.story_p2">What began as weekend batches shared with neighbours' dogs quickly grew into a movement. Today, DogFood Co. serves over 50,000 dogs across Qatar and the Gulf, and every recipe still starts with the same question: <em>"Would Biscuit eat this?"</em></p>
+            <p data-i18n="about.story_p3">We're part of a community of dog lovers who believe that what goes into the bowl matters — and that real, whole ingredients shouldn't be a luxury.</p>
+            <a href="shop.html" class="btn btn-primary" style="margin-top:8px;" data-i18n="about.story_cta">Explore Our Products →</a>
         </div>
         <div class="about-intro-img">
             <img src="https://imgur.com/yDRFx0C.png" alt="Happy dog">
@@ -56,27 +77,27 @@
 <section class="benefits">
     <div class="container benefits-inner">
         <div class="benefits-text reveal">
-            <span class="badge badge-dark">By the Numbers</span>
-            <h2>The results speak for themselves.</h2>
-            <p>Every metric we track comes back to one thing: healthier, happier dogs. That's why thousands of owners keep coming back.</p>
-            <a href="shop.html" class="btn btn-primary">Start Your Dog's Journey →</a>
+            <span class="badge badge-dark" data-i18n="about.stats_badge">By the Numbers</span>
+            <h2 data-i18n="about.stats_title">The results speak for themselves.</h2>
+            <p data-i18n="about.stats_desc">Every metric we track comes back to one thing: healthier, happier dogs. That's why thousands of owners keep coming back.</p>
+            <a href="shop.html" class="btn btn-primary" data-i18n="about.stats_cta">Start Your Dog's Journey →</a>
         </div>
         <div class="benefits-stats reveal">
             <div class="stat-card">
-                <span class="stat-number">50K+</span>
-                <p>Dogs currently eating DogFood Co. across Qatar and the Gulf.</p>
+                <span class="stat-number" data-i18n="about.stat1">50K+</span>
+                <p data-i18n="about.stat1_desc">Dogs currently eating DogFood Co. across Qatar and the Gulf.</p>
             </div>
             <div class="stat-card">
-                <span class="stat-number">97%</span>
-                <p>Customer re-order rate after the first month.</p>
+                <span class="stat-number" data-i18n="about.stat2">97%</span>
+                <p data-i18n="about.stat2_desc">Customer re-order rate after the first month.</p>
             </div>
             <div class="stat-card">
-                <span class="stat-number">12</span>
-                <p>Veterinary nutritionists involved in formulating our recipes.</p>
+                <span class="stat-number" data-i18n="about.stat3">12</span>
+                <p data-i18n="about.stat3_desc">Veterinary nutritionists involved in formulating our recipes.</p>
             </div>
             <div class="stat-card">
-                <span class="stat-number">0</span>
-                <p>Artificial colours, flavours, or preservatives. Ever.</p>
+                <span class="stat-number" data-i18n="about.stat4">0</span>
+                <p data-i18n="about.stat4_desc">Artificial colours, flavours, or preservatives. Ever.</p>
             </div>
         </div>
     </div>
@@ -86,39 +107,39 @@
 <section style="padding:96px 0; background:var(--cream);">
     <div class="container">
         <div class="text-center" style="margin-bottom:52px;">
-            <div class="section-label" style="justify-content:center;display:flex;">What We Stand For</div>
-            <h2 class="section-title">Our Values</h2>
+            <div class="section-label" style="justify-content:center;display:flex;" data-i18n="about.values_label">What We Stand For</div>
+            <h2 class="section-title" data-i18n="about.values_title">Our Values</h2>
         </div>
         <div class="values-grid">
             <div class="value-card reveal">
                 <div class="icon">🥩</div>
-                <h3>Real Ingredients Only</h3>
-                <p>Every recipe starts with named, whole proteins — chicken, salmon, beef. No "meat meal", no by-products, no mystery fillers.</p>
+                <h3 data-i18n="about.val1_title">Real Ingredients Only</h3>
+                <p data-i18n="about.val1_desc">Every recipe starts with named, whole proteins — chicken, salmon, beef. No "meat meal", no by-products, no mystery fillers.</p>
             </div>
             <div class="value-card reveal">
                 <div class="icon">🔬</div>
-                <h3>Science-Backed Formulation</h3>
-                <p>Our recipes are developed in partnership with board-certified veterinary nutritionists and tested rigorously before going on sale.</p>
+                <h3 data-i18n="about.val2_title">Science-Backed Formulation</h3>
+                <p data-i18n="about.val2_desc">Our recipes are developed in partnership with board-certified veterinary nutritionists and tested rigorously before going on sale.</p>
             </div>
             <div class="value-card reveal">
                 <div class="icon">🌿</div>
-                <h3>Clean Labels</h3>
-                <p>We believe you should understand every ingredient. If we wouldn't eat it ourselves, it's not going in our food.</p>
+                <h3 data-i18n="about.val3_title">Clean Labels</h3>
+                <p data-i18n="about.val3_desc">We believe you should understand every ingredient. If we wouldn't eat it ourselves, it's not going in our food.</p>
             </div>
             <div class="value-card reveal">
                 <div class="icon">🤝</div>
-                <h3>Honest Business</h3>
-                <p>No subscription traps, no hard sells. Just great food, transparent pricing, and a team that answers the phone.</p>
+                <h3 data-i18n="about.val4_title">Honest Business</h3>
+                <p data-i18n="about.val4_desc">No subscription traps, no hard sells. Just great food, transparent pricing, and a team that answers the phone.</p>
             </div>
             <div class="value-card reveal">
                 <div class="icon">📦</div>
-                <h3>Freshness Guaranteed</h3>
-                <p>Manufactured in small batches and delivered quickly. We never sit on stock — your dog gets food at peak nutritional quality.</p>
+                <h3 data-i18n="about.val5_title">Freshness Guaranteed</h3>
+                <p data-i18n="about.val5_desc">Manufactured in small batches and delivered quickly. We never sit on stock — your dog gets food at peak nutritional quality.</p>
             </div>
             <div class="value-card reveal">
                 <div class="icon">♻️</div>
-                <h3>Sustainable Packaging</h3>
-                <p>Our packaging is recyclable and we're actively working toward fully compostable packaging by 2026.</p>
+                <h3 data-i18n="about.val6_title">Sustainable Packaging</h3>
+                <p data-i18n="about.val6_desc">Our packaging is recyclable and we're actively working toward fully compostable packaging by 2026.</p>
             </div>
         </div>
     </div>
@@ -128,21 +149,21 @@
 <section style="padding:96px 0; background:var(--white);">
     <div class="container">
         <div class="text-center" style="margin-bottom:52px;">
-            <div class="section-label" style="display:flex;justify-content:center;">The Team</div>
-            <h2 class="section-title">The people behind the bowl</h2>
+            <div class="section-label" style="display:flex;justify-content:center;" data-i18n="about.team_label">The Team</div>
+            <h2 class="section-title" data-i18n="about.team_title">The people behind the bowl</h2>
         </div>
         <div class="team-grid">
             <div class="team-card reveal">
                 <div class="team-avatar">L</div>
-                <h3>Dr. Leila Nasser</h3>
-                <div class="role">Founder & Chief Nutrition Officer</div>
-                <p>Veterinary nutritionist with 14 years' experience. Biscuit's proud mum.</p>
+                <h3 data-i18n="about.team1_name">Dr. Leila Nasser</h3>
+                <div class="role" data-i18n="about.team1_role">Founder & Chief Nutrition Officer</div>
+                <p data-i18n="about.team1_desc">Veterinary nutritionist with 14 years' experience. Biscuit's proud mum.</p>
             </div>
             <div class="team-card reveal">
                 <div class="team-avatar">K</div>
-                <h3>Karim Farouk</h3>
-                <div class="role">Head of Operations</div>
-                <p>Keeps every batch on schedule and every delivery on time across the Gulf.</p>
+                <h3 data-i18n="about.team2_name">Karim Farouk</h3>
+                <div class="role" data-i18n="about.team2_role">Head of Operations</div>
+                <p data-i18n="about.team2_desc">Keeps every batch on schedule and every delivery on time across the Gulf.</p>
             </div>
             <div class="team-card reveal">
                 <div class="team-avatar">A</div>
@@ -165,31 +186,31 @@
     <div class="container">
         <div class="section-header">
             <span class="badge">Happy Customers</span>
-            <h2>Don't take our word for it</h2>
+            <h2 data-i18n="about.test_title">Don't take our word for it</h2>
         </div>
         <div class="testimonials-grid">
             <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
-                <p>"Max has so much more energy since switching. His coat is glossy and he actually finishes every meal — first time ever!"</p>
+                <p data-i18n="test1_quote">"Max has so much more energy since switching. His coat is glossy and he actually finishes every meal — first time ever!"</p>
                 <div class="reviewer">
                     <div class="reviewer-avatar">S</div>
-                    <div><strong>Sarah M.</strong><br><small>Golden Retriever owner</small></div>
+                    <div><strong data-i18n="test1_name">Sarah M.</strong><br><small data-i18n="test1_role">Golden Retriever owner</small></div>
                 </div>
             </div>
             <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
-                <p>"Our vet noticed the improvement before we even mentioned the food change. Bella's digestion is night and day different."</p>
+                <p data-i18n="test2_quote">"Our vet noticed the improvement before we even mentioned the food change. Bella's digestion is night and day different."</p>
                 <div class="reviewer">
                     <div class="reviewer-avatar">J</div>
-                    <div><strong>James R.</strong><br><small>Border Collie owner</small></div>
+                    <div><strong data-i18n="test2_name">James R.</strong><br><small data-i18n="test2_role">Border Collie owner</small></div>
                 </div>
             </div>
             <div class="testimonial-card reveal">
                 <div class="stars">★★★★★</div>
-                <p>"I was sceptical but the 30-day guarantee made it easy to try. Rocky lost 2kg in 6 weeks and plays like a puppy again."</p>
+                <p data-i18n="test3_quote">"I was sceptical but the 30-day guarantee made it easy to try. Rocky lost 2kg in 6 weeks and plays like a puppy again."</p>
                 <div class="reviewer">
                     <div class="reviewer-avatar">L</div>
-                    <div><strong>Lisa K.</strong><br><small>Labrador owner</small></div>
+                    <div><strong data-i18n="test3_name">Lisa K.</strong><br><small data-i18n="test3_role">Labrador owner</small></div>
                 </div>
             </div>
         </div>
@@ -200,53 +221,53 @@
 <section style="padding:96px 0; background:var(--cream);">
     <div class="container">
         <div class="text-center" style="margin-bottom:48px;">
-            <div class="section-label" style="display:flex;justify-content:center;">Questions</div>
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="section-label" style="display:flex;justify-content:center;" data-i18n="about.faq_label">Questions</div>
+            <h2 class="section-title" data-i18n="about.faq_title">Frequently Asked Questions</h2>
         </div>
         <div class="faq-list">
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    Is DogFood Co. suitable for all breeds and ages?
+                    <span data-i18n="about.faq1_q">Is DogFood Co. suitable for all breeds and ages?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Yes — our core adult formula is appropriate for dogs of all breeds over 12 months. We also offer puppy and senior-specific recipes. If your dog has a health condition, we recommend a quick chat with your vet before switching.</p>
+                    <p data-i18n="about.faq1_a">Yes — our core adult formula is appropriate for dogs of all breeds over 12 months. We also offer puppy and senior-specific recipes. If your dog has a health condition, we recommend a quick chat with your vet before switching.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    How do I transition my dog to DogFood Co.?
+                    <span data-i18n="about.faq2_q">How do I transition my dog to DogFood Co.?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>We recommend a 7-day transition: start by mixing 25% DogFood Co. with 75% of your current food, gradually increasing the ratio each day. This helps avoid any digestive upset while your dog's gut microbiome adjusts to the new, higher-quality nutrition.</p>
+                    <p data-i18n="about.faq2_a">We recommend a 7-day transition: start by mixing 25% DogFood Co. with 75% of your current food, gradually increasing the ratio each day. This helps avoid any digestive upset while your dog's gut microbiome adjusts to the new, higher-quality nutrition.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    Do you deliver across Qatar?
+                    <span data-i18n="about.faq3_q">Do you deliver across Qatar?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Yes, we deliver to all areas in Qatar including Doha, Lusail, Al Wakra, Al Khor, and Al Rayyan. Delivery is free on orders over QAR 150. Orders are typically delivered within 1–2 business days.</p>
+                    <p data-i18n="about.faq3_a">Yes, we deliver to all areas in Qatar including Doha, Lusail, Al Wakra, Al Khor, and Al Rayyan. Delivery is free on orders over QAR 150. Orders are typically delivered within 1–2 business days.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    What is your money-back guarantee?
+                    <span data-i18n="about.faq4_q">What is your money-back guarantee?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>If your dog doesn't love it within 30 days, we'll give you a full refund — no questions asked. Just message us on WhatsApp with your order details and we'll process it immediately.</p>
+                    <p data-i18n="about.faq4_a">If your dog doesn't love it within 30 days, we'll give you a full refund — no questions asked. Just message us on WhatsApp with your order details and we'll process it immediately.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" aria-expanded="false">
-                    Are your products vet-approved?
+                    <span data-i18n="about.faq5_q">Are your products vet-approved?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Every recipe is formulated by board-certified veterinary nutritionists and meets or exceeds AAFCO nutritional standards. We also work with a panel of 12 practising vets across Qatar who review and validate our formulas annually.</p>
+                    <p data-i18n="about.faq5_a">Every recipe is formulated by board-certified veterinary nutritionists and meets or exceeds AAFCO nutritional standards. We also work with a panel of 12 practising vets across Qatar who review and validate our formulas annually.</p>
                 </div>
             </div>
         </div>
@@ -257,10 +278,10 @@
 <section class="cta-banner">
     <div class="container cta-inner">
         <div>
-            <h2>Give your dog the nutrition they deserve.</h2>
-            <p>Order via WhatsApp in under 2 minutes — free delivery on orders over QAR 150.</p>
+            <h2 data-i18n="about.cta_title">Give your dog the nutrition they deserve.</h2>
+            <p data-i18n="about.cta_desc">Order via WhatsApp in under 2 minutes — free delivery on orders over QAR 150.</p>
         </div>
-        <a href="shop.html" class="btn btn-white">Shop All Products →</a>
+        <a href="shop.html" class="btn btn-white" data-i18n="cta.shopall">Shop All Products →</a>
     </div>
 </section>
 
@@ -269,45 +290,46 @@
     <div class="footer-container">
         <div class="footer-about">
             <div class="footer-logo">🐾 DogFood Co.</div>
-            <p>Real food, real ingredients, real results. Scientifically formulated with vets and backed by thousands of happy customers.</p>
+            <p data-i18n="footer.about_desc">Real food, real ingredients, real results. Scientifically formulated with vets and backed by thousands of happy customers.</p>
         </div>
         <div class="footer-links">
-            <h3>Quick Links</h3>
+            <h3 data-i18n="footer.quicklinks">Quick Links</h3>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Our Food</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="shop.html" data-i18n="nav.shop">Our Food</a></li>
+                <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
             </ul>
         </div>
         <div class="footer-contact">
-            <h3>Contact</h3>
+            <h3 data-i18n="footer.contact_title">Contact</h3>
             <p>📞 <a href="tel:+97474089629" style="color:rgba(255,255,255,0.7)">+974 7408 9629</a></p>
             <p>✉️ hello@dogfoodco.qa</p>
             <div class="social-icons">
-                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png" alt="Facebook"></a>
-                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" alt="Instagram"></a>
-                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/twitter.png" alt="Twitter"></a>
+                <a href="#" aria-label="Facebook"><img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png" alt="Facebook" width="20" height="20"></a>
+                <a href="#" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" alt="Instagram" width="20" height="20"></a>
+                <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/20/ffffff/twitter.png" alt="Twitter" width="20" height="20"></a>
             </div>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 DogFood Co. All rights reserved. | Order via WhatsApp: +974 7408 9629</p>
+        <p data-i18n="footer.rights">© 2025 DogFood Co. All rights reserved. | Order via WhatsApp: +974 7408 9629</p>
     </div>
 </footer>
 
-<a href="https://wa.me/97474089629" class="fab fab-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/97474089629" class="fab fab-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-i18n-aria-label="fab.whatsapp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
         <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.518 5.829L.057 23.886a.5.5 0 0 0 .611.611l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.844 9.844 0 0 1-5.031-1.378l-.36-.214-3.733.892.908-3.65-.234-.374A9.847 9.847 0 0 1 2.118 12C2.118 6.533 6.533 2.118 12 2.118S21.882 6.533 21.882 12 17.467 21.882 12 21.882z"/>
     </svg>
 </a>
-<a href="tel:+97474089629" class="fab fab-phone" aria-label="Call Us">
+<a href="tel:+97474089629" class="fab fab-phone" aria-label="Call Us" data-i18n-aria-label="fab.phone">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
         <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
     </svg>
 </a>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

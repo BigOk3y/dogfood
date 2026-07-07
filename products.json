@@ -1,0 +1,135 @@
+{
+  "_readme": "This file powers the shop page. To add a product, copy an existing entry, give it a unique 'id', fill in the fields, and save. To edit a price or description, just change the text here. You can edit this file directly, or use admin.html for a simple point-and-click editor. Category ids must match one of: dry, wet, supplement, treat.",
+
+  "categories": [
+    { "id": "dry", "en": "Dry Food", "ar": "طعام جاف" },
+    { "id": "wet", "en": "Wet Food", "ar": "طعام رطب" },
+    { "id": "supplement", "en": "Supplement", "ar": "مكمل غذائي" },
+    { "id": "treat", "en": "Treats", "ar": "وجبات خفيفة" }
+  ],
+
+  "products": [
+    {
+      "id": "p1",
+      "category": "dry",
+      "image": "https://imgur.com/W0EpPvp.png",
+      "badge": { "en": "Bestseller", "ar": "الأكثر مبيعاً", "style": "badge-new" },
+      "name": { "en": "Adult Chicken & Brown Rice", "ar": "دجاج وأرز بني للكلاب البالغة" },
+      "desc": { "en": "High-protein formula with whole chicken, brown rice, and 20+ superfoods. Supports lean muscle and healthy digestion.", "ar": "تركيبة عالية البروتين بدجاج كامل وأرز بني وأكثر من ٢٠ غذاءً فائقاً. تدعم الكتلة العضلية والهضم الصحي." },
+      "sizes": [
+        { "label": { "en": "2 kg", "ar": "٢ كجم" }, "price": 89 },
+        { "label": { "en": "5 kg", "ar": "٥ كجم" }, "price": 149 },
+        { "label": { "en": "12 kg", "ar": "١٢ كجم" }, "price": 249 }
+      ],
+      "weightNote": { "en": "From 2 kg", "ar": "ابتداءً من ٢ كجم" }
+    },
+    {
+      "id": "p2",
+      "category": "dry",
+      "image": "https://imgur.com/Yqj3eRN.png",
+      "badge": { "en": "Grain-Free", "ar": "خالٍ من الحبوب", "style": "" },
+      "name": { "en": "Salmon & Sweet Potato", "ar": "سلمون وبطاطا حلوة" },
+      "desc": { "en": "Omega-3-rich wild salmon with sweet potato and peas. Perfect for dogs with sensitive stomachs or skin conditions.", "ar": "سلمون بري غني بأوميغا-٣ مع بطاطا حلوة وبازلاء. مثالي للكلاب ذات المعدة الحساسة أو مشاكل الجلد." },
+      "sizes": [
+        { "label": { "en": "2 kg", "ar": "٢ كجم" }, "price": 99 },
+        { "label": { "en": "5 kg", "ar": "٥ كجم" }, "price": 169 },
+        { "label": { "en": "12 kg", "ar": "١٢ كجم" }, "price": 279 }
+      ],
+      "weightNote": { "en": "From 2 kg", "ar": "ابتداءً من ٢ كجم" }
+    },
+    {
+      "id": "p3",
+      "category": "wet",
+      "image": "https://imgur.com/ISbBLQY.png",
+      "badge": { "en": "New", "ar": "جديد", "style": "badge-new" },
+      "name": { "en": "Beef & Vegetable Stew", "ar": "يخنة لحم بقري وخضروات" },
+      "desc": { "en": "Slow-cooked beef with garden vegetables in a rich broth. Irresistible for fussy eaters and great as a topper.", "ar": "لحم بقري مطهو ببطء مع خضروات طازجة في مرق غني. لا يُقاوَم لصعبي الإرضاء، ورائع كإضافة فوق الطعام." },
+      "sizes": [
+        { "label": { "en": "400 g", "ar": "٤٠٠ جم" }, "price": 18 },
+        { "label": { "en": "12 × 400 g", "ar": "١٢ × ٤٠٠ جم" }, "price": 95 }
+      ],
+      "weightNote": { "en": "Per can", "ar": "لكل علبة" }
+    },
+    {
+      "id": "p4",
+      "category": "wet",
+      "image": "https://imgur.com/7onivQN.png",
+      "badge": null,
+      "name": { "en": "Turkey & Pumpkin Pâté", "ar": "باتيه ديك رومي ويقطين" },
+      "desc": { "en": "Smooth, grain-free pâté with lean turkey and pumpkin. Gentle on digestion, rich in natural beta-carotene.", "ar": "باتيه ناعم خالٍ من الحبوب بديك رومي قليل الدهن ويقطين. لطيف على الهضم وغني ببيتا كاروتين طبيعي." },
+      "sizes": [
+        { "label": { "en": "400 g", "ar": "٤٠٠ جم" }, "price": 16 },
+        { "label": { "en": "12 × 400 g", "ar": "١٢ × ٤٠٠ جم" }, "price": 85 }
+      ],
+      "weightNote": { "en": "Per can", "ar": "لكل علبة" }
+    },
+    {
+      "id": "p5",
+      "category": "supplement",
+      "image": "https://imgur.com/5Bwou4k.png",
+      "badge": { "en": "Top Rated", "ar": "الأعلى تقييماً", "style": "custom-purple" },
+      "name": { "en": "Probiotic & Gut Health Powder", "ar": "مسحوق بروبيوتيك لصحة الأمعاء" },
+      "desc": { "en": "Daily supplement with 5 billion CFUs per serving. Promotes healthy gut flora, improves stool quality, and boosts immunity.", "ar": "مكمل يومي بـ ٥ مليارات وحدة مكوّنة للمستعمرات في كل حصة. يعزز البكتيريا النافعة، ويحسّن جودة الإخراج، ويقوّي المناعة." },
+      "sizes": [
+        { "label": { "en": "150 g (30 days)", "ar": "١٥٠ جم (٣٠ يوماً)" }, "price": 75 },
+        { "label": { "en": "450 g (90 days)", "ar": "٤٥٠ جم (٩٠ يوماً)" }, "price": 199 }
+      ],
+      "weightNote": { "en": "30-day supply", "ar": "تكفي ٣٠ يوماً" }
+    },
+    {
+      "id": "p6",
+      "category": "supplement",
+      "image": "https://imgur.com/eGjCdAO.png",
+      "badge": null,
+      "name": { "en": "Joint & Mobility Support", "ar": "دعم المفاصل والحركة" },
+      "desc": { "en": "Glucosamine, chondroitin and turmeric complex to maintain healthy joints and cartilage. Ideal for senior dogs.", "ar": "مركّب غلوكوزامين وكوندرويتين وكركم للحفاظ على مفاصل وغضاريف صحية. مثالي للكلاب المسنّة." },
+      "sizes": [
+        { "label": { "en": "60 chews", "ar": "٦٠ قطعة" }, "price": 85 },
+        { "label": { "en": "120 chews", "ar": "١٢٠ قطعة" }, "price": 155 }
+      ],
+      "weightNote": { "en": "60 chews", "ar": "٦٠ قطعة" }
+    },
+    {
+      "id": "p7",
+      "category": "treat",
+      "image": "https://imgur.com/X1uKFle.png",
+      "badge": { "en": "Bundle Deal", "ar": "عرض حزمة", "style": "badge-sale" },
+      "name": { "en": "Natural Training Treats", "ar": "مكافآت تدريب طبيعية" },
+      "desc": { "en": "Bite-sized, low-calorie chicken liver treats. No artificial colours or flavours. Perfect for training rewards.", "ar": "قطع صغيرة قليلة السعرات من كبد الدجاج. بلا ألوان أو نكهات صناعية. مثالية كمكافآت أثناء التدريب." },
+      "sizes": [
+        { "label": { "en": "200 g", "ar": "٢٠٠ جم" }, "price": 28 },
+        { "label": { "en": "400 g", "ar": "٤٠٠ جم" }, "price": 48 },
+        { "label": { "en": "3 × 400 g", "ar": "٣ × ٤٠٠ جم" }, "price": 120 }
+      ],
+      "weightNote": { "en": "From 200 g", "ar": "ابتداءً من ٢٠٠ جم" }
+    },
+    {
+      "id": "p8",
+      "category": "treat",
+      "image": "https://imgur.com/sHuQ5a9.png",
+      "badge": null,
+      "name": { "en": "Dental Health Chews", "ar": "قطع مضغ لصحة الأسنان" },
+      "desc": { "en": "Daily chews that reduce plaque and tartar while freshening breath. Vet-recommended for dogs of all sizes.", "ar": "قطع مضغ يومية تقلّل الجير والترسبات وتُنعش النفس. موصى بها من الأطباء البيطريين لجميع أحجام الكلاب." },
+      "sizes": [
+        { "label": { "en": "Small (7–15 kg)", "ar": "صغير (٧-١٥ كجم)" }, "price": 35 },
+        { "label": { "en": "Medium (15–30 kg)", "ar": "متوسط (١٥-٣٠ كجم)" }, "price": 40 },
+        { "label": { "en": "Large (30 kg+)", "ar": "كبير (+٣٠ كجم)" }, "price": 45 }
+      ],
+      "weightNote": { "en": "28 chews / pack", "ar": "٢٨ قطعة / عبوة" }
+    },
+    {
+      "id": "p9",
+      "category": "dry",
+      "image": "https://imgur.com/yDRFx0C.png",
+      "badge": { "en": "Save 20%", "ar": "وفّر ٢٠٪", "style": "badge-sale" },
+      "name": { "en": "New Dog Starter Bundle", "ar": "حزمة بداية للكلاب الجديدة" },
+      "desc": { "en": "Everything a new dog needs: 2 kg dry food + 6 wet food cans + probiotic powder. Best way to start the journey.", "ar": "كل ما يحتاجه كلبك الجديد: ٢ كجم طعام جاف + ٦ علب طعام رطب + مسحوق بروبيوتيك. أفضل طريقة لبدء الرحلة." },
+      "sizes": [
+        { "label": { "en": "Small Dog", "ar": "كلب صغير" }, "price": 169, "originalPrice": 210 },
+        { "label": { "en": "Medium Dog", "ar": "كلب متوسط" }, "price": 189, "originalPrice": 210 },
+        { "label": { "en": "Large Dog", "ar": "كلب كبير" }, "price": 209, "originalPrice": 210 }
+      ],
+      "weightNote": { "en": "", "ar": "" }
+    }
+  ]
+}

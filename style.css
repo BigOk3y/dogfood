@@ -1349,3 +1349,87 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(238,111,75,0.38); }
     .product-grid { grid-template-columns: 1fr; }
     .team-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ============================================================
+   LANGUAGE TOGGLE BUTTON
+   ============================================================ */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.16);
+    border: 1.5px solid rgba(255,255,255,0.4);
+    color: #fff;
+    font-family: "Inter Tight", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 100px;
+    cursor: pointer;
+    margin-inline-start: 6px;
+    transition: background 0.15s;
+}
+.lang-toggle:hover { background: rgba(255,255,255,0.28); }
+.lang-globe { font-size: 0.95rem; line-height: 1; }
+
+/* ============================================================
+   RTL (ARABIC) LAYOUT
+   Uses [dir="rtl"] so the whole page mirrors instantly when
+   the visitor's language is switched — no separate stylesheet.
+   ============================================================ */
+[dir="rtl"] body {
+    font-family: "Tajawal", "Inter Tight", sans-serif;
+}
+[dir="rtl"] .faq-question,
+[dir="rtl"] .contact-form-wrap,
+[dir="rtl"] .form-group,
+[dir="rtl"] .modal-form-group {
+    text-align: right;
+}
+[dir="rtl"] .hero-text p,
+[dir="rtl"] .about-intro-text p,
+[dir="rtl"] .benefits-text p {
+    max-width: 100%;
+}
+[dir="rtl"] .trust-row,
+[dir="rtl"] .hero-actions,
+[dir="rtl"] .nav-links,
+[dir="rtl"] .footer-container,
+[dir="rtl"] .contact-detail,
+[dir="rtl"] .feature-card,
+[dir="rtl"] .reviewer,
+[dir="rtl"] .cta-inner,
+[dir="rtl"] .form-row {
+    direction: rtl;
+}
+[dir="rtl"] .faq-question {
+    flex-direction: row-reverse;
+}
+[dir="rtl"] .breadcrumb {
+    direction: rtl;
+}
+/* Numbers, phone numbers and prices stay LTR so they read correctly */
+[dir="rtl"] .amount,
+[dir="rtl"] .original,
+[dir="rtl"] a[href^="tel:"],
+[dir="rtl"] a[href^="https://wa.me"] {
+    direction: ltr;
+    display: inline-block;
+}
+[dir="rtl"] .fab {
+    right: auto;
+    left: 24px;
+}
+[dir="rtl"] .fab-whatsapp { left: 24px; }
+[dir="rtl"] .fab-phone { left: 24px; }
+[dir="rtl"] .modal-close {
+    right: auto;
+    left: 18px;
+}
+[dir="rtl"] .value-card {
+    border-top: 4px solid var(--orange);
+    border-inline-start: none;
+}
+@media (min-width: 1px) {
+    [dir="rtl"] .nav-toggle span { align-self: flex-end; }
+}

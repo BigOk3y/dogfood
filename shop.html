@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop – DogFood Co.</title>
+    <meta name="description" content="Browse vet-formulated dry food, wet food, supplements and treats. Order via WhatsApp with delivery across Qatar — free over QAR 150.">
+    <link rel="canonical" href="https://www.dogfoodco.qa/shop.html">
+    <link rel="alternate" hreflang="en" href="https://www.dogfoodco.qa/shop.html">
+    <link rel="alternate" hreflang="ar" href="https://www.dogfoodco.qa/shop.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.dogfoodco.qa/shop.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shop – DogFood Co.">
+    <meta property="og:description" content="Vet-formulated dry food, wet food, supplements and treats, delivered across Qatar.">
+    <meta property="og:url" content="https://www.dogfoodco.qa/shop.html">
+    <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-i18n-page-title="shop.title" data-i18n-meta-desc="shop.meta_desc">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dogfoodco.qa/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Our Food", "item": "https://www.dogfoodco.qa/shop.html"}
+  ]
+}
+</script>
 
 <!-- NAV -->
 <nav>
@@ -19,20 +39,21 @@
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Our Food</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="shop.html" class="nav-shop">Shop Now</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="shop.html" data-i18n="nav.shop">Our Food</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+            <li><a href="shop.html" class="nav-shop" data-i18n="nav.shopnow">Shop Now</a></li>
+            <li><button type="button" id="langToggle" class="lang-toggle" onclick="toggleLang()" aria-label="Switch language / تغيير اللغة"><span class="lang-globe" aria-hidden="true">🌐</span><span id="langToggleLabel">العربية</span></button></li>
         </ul>
     </div>
 </nav>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-    <p class="breadcrumb"><a href="index.html">Home</a> › Our Food</p>
-    <h1>Real Food for Real Dogs</h1>
-    <p>Every product is vet-formulated, made with whole ingredients, and delivered fresh. Order any item directly via WhatsApp.</p>
+    <p class="breadcrumb"><a href="index.html" data-i18n="shop.breadcrumb_home">Home</a> › <span data-i18n="shop.breadcrumb_current">Our Food</span></p>
+    <h1 data-i18n="shop.hero_title">Real Food for Real Dogs</h1>
+    <p data-i18n="shop.hero_desc">Every product is vet-formulated, made with whole ingredients, and delivered fresh. Order any item directly via WhatsApp.</p>
 </div>
 
 <!-- SHOP SECTION -->
@@ -41,305 +62,40 @@
 
         <!-- Filters -->
         <div class="product-filters">
-            <button class="filter-btn active" data-filter="all">All Products</button>
-            <button class="filter-btn" data-filter="dry">Dry Food</button>
-            <button class="filter-btn" data-filter="wet">Wet Food</button>
-            <button class="filter-btn" data-filter="supplement">Supplements</button>
-            <button class="filter-btn" data-filter="treat">Treats</button>
+            <button class="filter-btn active" data-filter="all" data-i18n="shop.filter_all">All Products</button>
+            <button class="filter-btn" data-filter="dry" data-i18n="shop.filter_dry">Dry Food</button>
+            <button class="filter-btn" data-filter="wet" data-i18n="shop.filter_wet">Wet Food</button>
+            <button class="filter-btn" data-filter="supplement" data-i18n="shop.filter_supplement">Supplements</button>
+            <button class="filter-btn" data-filter="treat" data-i18n="shop.filter_treat">Treats</button>
         </div>
 
-        <!-- Product Grid -->
-        <div class="product-grid">
-
-            <!-- Product 1 -->
-            <div class="product-card reveal" data-category="dry">
-                <div class="product-img">
-                    <img src="https://imgur.com/W0EpPvp.png" alt="Adult Chicken & Brown Rice">
-                    <span class="product-badge badge-new">Bestseller</span>
-                </div>
-                <div class="product-body">
-                    <div class="product-category">Dry Food</div>
-                    <div class="product-name">Adult Chicken &amp; Brown Rice</div>
-                    <div class="product-desc">High-protein formula with whole chicken, brown rice, and 20+ superfoods. Supports lean muscle and healthy digestion.</div>
-                    <div class="size-selector">
-                        <button class="size-btn" data-price="89">2 kg</button>
-                        <button class="size-btn" data-price="149">5 kg</button>
-                        <button class="size-btn" data-price="249">12 kg</button>
-                    </div>
-                    <div class="product-meta">
-                        <div class="product-price">QAR <span class="amount">89</span></div>
-                        <div class="product-weight">From 2 kg</div>
-                    </div>
-                    <div class="qty-row" style="margin-top:8px;">
-                        <button class="qty-btn qty-minus" aria-label="Decrease">−</button>
-                        <div class="qty-display">1</div>
-                        <button class="qty-btn qty-plus" aria-label="Increase">+</button>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-primary btn-order-wa">🛒 Order via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card reveal" data-category="dry">
-                <div class="product-img">
-                    <img src="https://imgur.com/Yqj3eRN.png" alt="Salmon & Sweet Potato">
-                    <span class="product-badge">Grain-Free</span>
-                </div>
-                <div class="product-body">
-                    <div class="product-category">Dry Food</div>
-                    <div class="product-name">Salmon &amp; Sweet Potato</div>
-                    <div class="product-desc">Omega-3-rich wild salmon with sweet potato and peas. Perfect for dogs with sensitive stomachs or skin conditions.</div>
-                    <div class="size-selector">
-                        <button class="size-btn" data-price="99">2 kg</button>
-                        <button class="size-btn" data-price="169">5 kg</button>
-                        <button class="size-btn" data-price="279">12 kg</button>
-                    </div>
-                    <div class="product-meta">
-                        <div class="product-price">QAR <span class="amount">99</span></div>
-                        <div class="product-weight">From 2 kg</div>
-                    </div>
-                    <div class="qty-row" style="margin-top:8px;">
-                        <button class="qty-btn qty-minus">−</button>
-                        <div class="qty-display">1</div>
-                        <button class="qty-btn qty-plus">+</button>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-primary btn-order-wa">🛒 Order via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card reveal" data-category="wet">
-                <div class="product-img">
-                    <img src="https://imgur.com/ISbBLQY.png" alt="Beef & Vegetable Stew">
-                    <span class="product-badge badge-new">New</span>
-                </div>
-                <div class="product-body">
-                    <div class="product-category">Wet Food</div>
-                    <div class="product-name">Beef &amp; Vegetable Stew</div>
-                    <div class="product-desc">Slow-cooked beef with garden vegetables in a rich broth. Irresistible for fussy eaters and great as a topper.</div>
-                    <div class="size-selector">
-                        <button class="size-btn" data-price="18">400 g</button>
-                        <button class="size-btn" data-price="95">12 × 400 g</button>
-                    </div>
-                    <div class="product-meta">
-                        <div class="product-price">QAR <span class="amount">18</span></div>
-                        <div class="product-weight">Per can</div>
-                    </div>
-                    <div class="qty-row" style="margin-top:8px;">
-                        <button class="qty-btn qty-minus">−</button>
-                        <div class="qty-display">1</div>
-                        <button class="qty-btn qty-plus">+</button>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-primary btn-order-wa">🛒 Order via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card reveal" data-category="wet">
-                <div class="product-img">
-                    <img src="https://imgur.com/7onivQN.png" alt="Turkey & Pumpkin Pâté">
-                </div>
-                <div class="product-body">
-                    <div class="product-category">Wet Food</div>
-                    <div class="product-name">Turkey &amp; Pumpkin Pâté</div>
-                    <div class="product-desc">Smooth, grain-free pâté with lean turkey and pumpkin. Gentle on digestion, rich in natural beta-carotene.</div>
-                    <div class="size-selector">
-                        <button class="size-btn" data-price="16">400 g</button>
-                        <button class="size-btn" data-price="85">12 × 400 g</button>
-                    </div>
-                    <div class="product-meta">
-                        <div class="product-price">QAR <span class="amount">16</span></div>
-                        <div class="product-weight">Per can</div>
-                    </div>
-                    <div class="qty-row" style="margin-top:8px;">
-                        <button class="qty-btn qty-minus">−</button>
-                        <div class="qty-display">1</div>
-                        <button class="qty-btn qty-plus">+</button>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-primary btn-order-wa">🛒 Order via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card reveal" data-category="supplement">
-                <div class="product-img">
-                    <img src="https://imgur.com/5Bwou4k.png" alt="Probiotic & Gut Health">
-                    <span class="product-badge" style="background:#8e44ad;">Top Rated</span>
-                </div>
-                <div class="product-body">
-                    <div class="product-category">Supplement</div>
-                    <div class="product-name">Probiotic &amp; Gut Health Powder</div>
-                    <div class="product-desc">Daily supplement with 5 billion CFUs per serving. Promotes healthy gut flora, improves stool quality, and boosts immunity.</div>
-                    <div class="size-selector">
-                        <button class="size-btn" data-price="75">150 g (30 days)</button>
-                        <button class="size-btn" data-price="199">450 g (90 days)</button>
-                    </div>
-                    <div class="product-meta">
-                        <div class="product-price">QAR <span class="amount">75</span></div>
-                        <div class="product-weight">30-day supply</div>
-                    </div>
-                    <div class="qty-row" style="margin-top:8px;">
-                        <button class="qty-btn qty-minus">−</button>
-                        <div class="qty-display">1</div>
-                        <button class="qty-btn qty-plus">+</button>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-primary btn-order-wa">🛒 Order via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card reveal" data-category="supplement">
-                <div class="product-img">
-                    <img src="https://imgur.com/eGjCdAO.png" alt="Joint & Mobility Support">
-                </div>
-                <div class="product-body">
-                    <div class="product-category">Supplement</div>
-                    <div class="product-name">Joint &amp; Mobility Support</div>
-                    <div class="product-desc">Glucosamine, chondroitin and turmeric complex to maintain healthy joints and cartilage. Ideal for senior dogs.</div>
-                    <div class="size-selector">
-                        <button class="size-btn" data-price="85">60 chews</button>
-                        <button class="size-btn" data-price="155">120 chews</button>
-                    </div>
-                    <div class="product-meta">
-                        <div class="product-price">QAR <span class="amount">85</span></div>
-                        <div class="product-weight">60 chews</div>
-                    </div>
-                    <div class="qty-row" style="margin-top:8px;">
-                        <button class="qty-btn qty-minus">−</button>
-                        <div class="qty-display">1</div>
-                        <button class="qty-btn qty-plus">+</button>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-primary btn-order-wa">🛒 Order via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 7 -->
-            <div class="product-card reveal" data-category="treat">
-                <div class="product-img">
-                    <img src="https://imgur.com/X1uKFle.png" alt="Training Treats">
-                    <span class="product-badge badge-sale">Bundle Deal</span>
-                </div>
-                <div class="product-body">
-                    <div class="product-category">Treats</div>
-                    <div class="product-name">Natural Training Treats</div>
-                    <div class="product-desc">Bite-sized, low-calorie chicken liver treats. No artificial colours or flavours. Perfect for training rewards.</div>
-                    <div class="size-selector">
-                        <button class="size-btn" data-price="28">200 g</button>
-                        <button class="size-btn" data-price="48">400 g</button>
-                        <button class="size-btn" data-price="120">3 × 400 g</button>
-                    </div>
-                    <div class="product-meta">
-                        <div class="product-price">QAR <span class="amount">28</span></div>
-                        <div class="product-weight">From 200 g</div>
-                    </div>
-                    <div class="qty-row" style="margin-top:8px;">
-                        <button class="qty-btn qty-minus">−</button>
-                        <div class="qty-display">1</div>
-                        <button class="qty-btn qty-plus">+</button>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-primary btn-order-wa">🛒 Order via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="product-card reveal" data-category="treat">
-                <div class="product-img">
-                    <img src="https://imgur.com/sHuQ5a9.png" alt="Dental Chews">
-                </div>
-                <div class="product-body">
-                    <div class="product-category">Treats</div>
-                    <div class="product-name">Dental Health Chews</div>
-                    <div class="product-desc">Daily chews that reduce plaque and tartar while freshening breath. Vet-recommended for dogs of all sizes.</div>
-                    <div class="size-selector">
-                        <button class="size-btn" data-price="35">Small (7–15 kg)</button>
-                        <button class="size-btn" data-price="40">Medium (15–30 kg)</button>
-                        <button class="size-btn" data-price="45">Large (30 kg+)</button>
-                    </div>
-                    <div class="product-meta">
-                        <div class="product-price">QAR <span class="amount">35</span></div>
-                        <div class="product-weight">28 chews / pack</div>
-                    </div>
-                    <div class="qty-row" style="margin-top:8px;">
-                        <button class="qty-btn qty-minus">−</button>
-                        <div class="qty-display">1</div>
-                        <button class="qty-btn qty-plus">+</button>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-primary btn-order-wa">🛒 Order via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 9 — Starter Bundle -->
-            <div class="product-card reveal" data-category="dry">
-                <div class="product-img">
-                    <img src="https://imgur.com/yDRFx0C.png" alt="Starter Bundle">
-                    <span class="product-badge badge-sale">Save 20%</span>
-                </div>
-                <div class="product-body">
-                    <div class="product-category">Bundle</div>
-                    <div class="product-name">New Dog Starter Bundle</div>
-                    <div class="product-desc">Everything a new dog needs: 2 kg dry food + 6 wet food cans + probiotic powder. Best way to start the journey.</div>
-                    <div class="size-selector">
-                        <button class="size-btn" data-price="169">Small Dog</button>
-                        <button class="size-btn" data-price="189">Medium Dog</button>
-                        <button class="size-btn" data-price="209">Large Dog</button>
-                    </div>
-                    <div class="product-meta">
-                        <div class="product-price">
-                            <span class="original">QAR 210</span>
-                            QAR <span class="amount">169</span>
-                        </div>
-                    </div>
-                    <div class="qty-row" style="margin-top:8px;">
-                        <button class="qty-btn qty-minus">−</button>
-                        <div class="qty-display">1</div>
-                        <button class="qty-btn qty-plus">+</button>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-primary btn-order-wa">🛒 Order via WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-
-        </div><!-- /product-grid -->
+        <!-- Product Grid (rendered dynamically from products.json — see shop-render.js) -->
+        <div class="product-grid" id="productGrid" aria-live="polite">
+            <p style="padding:40px;text-align:center;color:#999;grid-column:1/-1;">Loading products…</p>
+        </div>
     </div>
 </section>
 
 <!-- HOW TO ORDER STRIP -->
 <section style="background:var(--dark); padding:72px 0;">
     <div class="container" style="text-align:center;">
-        <span class="badge badge-dark">Simple Ordering</span>
-        <h2 style="color:#fff; font-size:clamp(1.8rem,3vw,2.4rem); font-weight:800; margin-bottom:48px;">How to order in 3 easy steps</h2>
+        <span class="badge badge-dark" data-i18n="shop.howto_badge">Simple Ordering</span>
+        <h2 style="color:#fff; font-size:clamp(1.8rem,3vw,2.4rem); font-weight:800; margin-bottom:48px;" data-i18n="shop.howto_title">How to order in 3 easy steps</h2>
         <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px; max-width:860px; margin:0 auto;">
             <div style="color:#fff; text-align:center;">
                 <div style="width:56px;height:56px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;margin:0 auto 18px;">1</div>
-                <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">Pick your product</h3>
-                <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.65;">Select the size and quantity that suits your dog above.</p>
+                <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;" data-i18n="shop.step1_title">Pick your product</h3>
+                <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.65;" data-i18n="shop.step1_desc">Select the size and quantity that suits your dog above.</p>
             </div>
             <div style="color:#fff; text-align:center;">
                 <div style="width:56px;height:56px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;margin:0 auto 18px;">2</div>
-                <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">Tap "Order via WhatsApp"</h3>
-                <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.65;">Fill in your name, phone, and delivery area. Takes 30 seconds.</p>
+                <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;" data-i18n="shop.step2_title">Tap "Order via WhatsApp"</h3>
+                <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.65;" data-i18n="shop.step2_desc">Fill in your name, phone, and delivery area. Takes 30 seconds.</p>
             </div>
             <div style="color:#fff; text-align:center;">
                 <div style="width:56px;height:56px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;margin:0 auto 18px;">3</div>
-                <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">We confirm &amp; deliver</h3>
-                <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.65;">Our team confirms your order on WhatsApp and arranges delivery.</p>
+                <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;" data-i18n="shop.step3_title">We confirm &amp; deliver</h3>
+                <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.65;" data-i18n="shop.step3_desc">Our team confirms your order on WhatsApp and arranges delivery.</p>
             </div>
         </div>
     </div>
@@ -350,41 +106,41 @@
     <div class="footer-container">
         <div class="footer-about">
             <div class="footer-logo">🐾 DogFood Co.</div>
-            <p>Real food, real ingredients, real results. Scientifically formulated with vets and backed by thousands of happy customers.</p>
+            <p data-i18n="footer.about_desc">Real food, real ingredients, real results. Scientifically formulated with vets and backed by thousands of happy customers.</p>
         </div>
         <div class="footer-links">
-            <h3>Quick Links</h3>
+            <h3 data-i18n="footer.quicklinks">Quick Links</h3>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Our Food</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="shop.html" data-i18n="nav.shop">Our Food</a></li>
+                <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
             </ul>
         </div>
         <div class="footer-contact">
-            <h3>Contact</h3>
+            <h3 data-i18n="footer.contact_title">Contact</h3>
             <p>📞 <a href="tel:+97474089629" style="color:rgba(255,255,255,0.7)">+974 7408 9629</a></p>
             <p>✉️ hello@dogfoodco.qa</p>
             <div class="social-icons">
-                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png" alt="Facebook"></a>
-                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" alt="Instagram"></a>
-                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/twitter.png" alt="Twitter"></a>
+                <a href="#" aria-label="Facebook"><img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png" alt="Facebook" width="20" height="20"></a>
+                <a href="#" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" alt="Instagram" width="20" height="20"></a>
+                <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/20/ffffff/twitter.png" alt="Twitter" width="20" height="20"></a>
             </div>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 DogFood Co. All rights reserved. | Order via WhatsApp: +974 7408 9629</p>
+        <p data-i18n="footer.rights">© 2025 DogFood Co. All rights reserved. | Order via WhatsApp: +974 7408 9629</p>
     </div>
 </footer>
 
 <!-- FLOATING ACTION BUTTONS -->
-<a href="https://wa.me/97474089629" class="fab fab-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/97474089629" class="fab fab-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-i18n-aria-label="fab.whatsapp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
         <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.518 5.829L.057 23.886a.5.5 0 0 0 .611.611l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.844 9.844 0 0 1-5.031-1.378l-.36-.214-3.733.892.908-3.65-.234-.374A9.847 9.847 0 0 1 2.118 12C2.118 6.533 6.533 2.118 12 2.118S21.882 6.533 21.882 12 17.467 21.882 12 21.882z"/>
     </svg>
 </a>
-<a href="tel:+97474089629" class="fab fab-phone" aria-label="Call Us">
+<a href="tel:+97474089629" class="fab fab-phone" aria-label="Call Us" data-i18n-aria-label="fab.phone">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
         <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
     </svg>
@@ -396,8 +152,8 @@
 <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
     <div class="modal">
         <button class="modal-close" onclick="closeOrderModal()" aria-label="Close">×</button>
-        <h3>Complete Your Order</h3>
-        <p>Fill in your details and we'll open WhatsApp with everything pre-filled.</p>
+        <h3 data-i18n="shop.modal_title">Complete Your Order</h3>
+        <p data-i18n="shop.modal_desc">Fill in your details and we'll open WhatsApp with everything pre-filled.</p>
 
         <!-- Product summary -->
         <div class="modal-product">
@@ -412,13 +168,13 @@
         <form id="orderForm" novalidate>
             <!-- Size selector in modal -->
             <div style="margin-bottom:16px;">
-                <label style="font-size:0.85rem;font-weight:600;color:var(--dark);display:block;margin-bottom:8px;">Size / Pack</label>
+                <label style="font-size:0.85rem;font-weight:600;color:var(--dark);display:block;margin-bottom:8px;" data-i18n="shop.modal_size_label">Size / Pack</label>
                 <div class="size-selector" id="modalSizes"></div>
             </div>
 
             <!-- Qty in modal -->
             <div style="margin-bottom:20px;">
-                <label style="font-size:0.85rem;font-weight:600;color:var(--dark);display:block;margin-bottom:8px;">Quantity</label>
+                <label style="font-size:0.85rem;font-weight:600;color:var(--dark);display:block;margin-bottom:8px;" data-i18n="shop.modal_qty_label">Quantity</label>
                 <div class="qty-row">
                     <button type="button" class="qty-btn qty-minus">−</button>
                     <div class="qty-display">1</div>
@@ -427,20 +183,20 @@
             </div>
 
             <div class="modal-form-group">
-                <label for="oName">Your Name *</label>
-                <input type="text" id="oName" placeholder="e.g. Ahmed Al-Rashid" required>
+                <label for="oName" data-i18n="shop.modal_name">Your Name *</label>
+                <input type="text" id="oName" placeholder="e.g. Ahmed Al-Rashid" data-i18n-placeholder="shop.modal_name_ph" required>
             </div>
             <div class="modal-form-group">
-                <label for="oPhone">Phone / WhatsApp *</label>
-                <input type="tel" id="oPhone" placeholder="+974 XXXX XXXX" required>
+                <label for="oPhone" data-i18n="shop.modal_phone">Phone / WhatsApp *</label>
+                <input type="tel" id="oPhone" placeholder="+974 XXXX XXXX" data-i18n-placeholder="shop.modal_phone_ph" required>
             </div>
             <div class="modal-form-group">
-                <label for="oArea">Delivery Area</label>
-                <input type="text" id="oArea" placeholder="e.g. Al Waab, Doha">
+                <label for="oArea" data-i18n="shop.modal_area">Delivery Area</label>
+                <input type="text" id="oArea" placeholder="e.g. Al Waab, Doha" data-i18n-placeholder="shop.modal_area_ph">
             </div>
             <div class="modal-form-group">
-                <label for="oNotes">Notes (optional)</label>
-                <textarea id="oNotes" placeholder="Allergies, preferred delivery time…"></textarea>
+                <label for="oNotes" data-i18n="shop.modal_notes">Notes (optional)</label>
+                <textarea id="oNotes" placeholder="Allergies, preferred delivery time…" data-i18n-placeholder="shop.modal_notes_ph"></textarea>
             </div>
 
             <button type="submit" class="modal-wa-btn">
@@ -448,14 +204,16 @@
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.518 5.829L.057 23.886a.5.5 0 0 0 .611.611l6.101-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.844 9.844 0 0 1-5.031-1.378l-.36-.214-3.733.892.908-3.65-.234-.374A9.847 9.847 0 0 1 2.118 12C2.118 6.533 6.533 2.118 12 2.118S21.882 6.533 21.882 12 17.467 21.882 12 21.882z"/>
                 </svg>
-                Send Order on WhatsApp
+                <span data-i18n="shop.modal_submit">Send Order on WhatsApp</span>
             </button>
-            <p class="modal-note">🔒 Your details go directly to us — no third parties.</p>
+            <p class="modal-note" data-i18n="shop.modal_note">🔒 Your details go directly to us — no third parties.</p>
         </form>
     </div>
 </div>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
+<script src="shop-render.js"></script>
 <script>
 // Sync modal sizes from the clicked product card
 document.querySelectorAll('.btn-order-wa').forEach(btn => {

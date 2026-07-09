@@ -146,12 +146,11 @@
                 }
                 const modalQtyRow = document.querySelector("#orderModal .qty-row");
                 if (modalQtyRow) {
-                    const minus = modalQtyRow.querySelector(".qty-minus");
-                    const plus = modalQtyRow.querySelector(".qty-plus");
+                    // script.js already wires this row's +/- buttons with addEventListener
+                    // at page load (the modal markup is static, unlike product cards).
+                    // Only reset the count here — re-wiring click handlers would fire twice.
                     const display = modalQtyRow.querySelector(".qty-display");
-                    display.textContent = "1";
-                    minus.onclick = () => { const v = parseInt(display.textContent); if (v > 1) display.textContent = v - 1; };
-                    plus.onclick = () => { display.textContent = parseInt(display.textContent) + 1; };
+                    if (display) display.textContent = "1";
                 }
             });
         });

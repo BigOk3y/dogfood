@@ -1408,28 +1408,31 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(238,111,75,0.38); }
 [dir="rtl"] .breadcrumb {
     direction: rtl;
 }
-/* Numbers, phone numbers and prices stay LTR so they read correctly */
-[dir="rtl"] .amount,
-[dir="rtl"] .original,
-[dir="rtl"] a[href^="tel:"],
-[dir="rtl"] a[href^="https://wa.me"] {
+/* Numbers, phone numbers and prices stay LTR so they read correctly.
+   :not(.fab) is important — without it this rule also matches the
+   floating WhatsApp button (its href starts with https://wa.me) and
+   overrides its flex centering, which is what made it vanish on mobile. */
+[dir="rtl"] a[href^="tel:"]:not(.fab),
+[dir="rtl"] a[href^="https://wa.me"]:not(.fab) {
     direction: ltr;
     display: inline-block;
 }
-[dir="rtl"] .fab {
-    right: auto;
-    left: 24px;
+[dir="rtl"] .amount,
+[dir="rtl"] .original {
+    direction: ltr;
+    display: inline-block;
 }
-[dir="rtl"] .fab-whatsapp { left: 24px; }
-[dir="rtl"] .fab-phone { left: 24px; }
+
+/* Mirror the floating action buttons instead of stacking them on
+   top of each other (previous rule set both to left:24px). */
+[dir="rtl"] .fab-whatsapp { left: auto; right: 28px; }
+[dir="rtl"] .fab-phone    { right: auto; left: 28px; }
+@media (max-width: 768px) {
+    [dir="rtl"] .fab-whatsapp { right: 16px; left: auto; }
+    [dir="rtl"] .fab-phone    { left: 16px; right: auto; }
+}
+
 [dir="rtl"] .modal-close {
     right: auto;
     left: 18px;
-}
-[dir="rtl"] .value-card {
-    border-top: 4px solid var(--orange);
-    border-inline-start: none;
-}
-@media (min-width: 1px) {
-    [dir="rtl"] .nav-toggle span { align-self: flex-end; }
 }

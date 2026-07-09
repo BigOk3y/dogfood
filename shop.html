@@ -214,44 +214,5 @@
 <script src="i18n.js"></script>
 <script src="script.js"></script>
 <script src="shop-render.js"></script>
-<script>
-// Sync modal sizes from the clicked product card
-document.querySelectorAll('.btn-order-wa').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const card        = btn.closest('.product-card');
-        const modalSizes  = document.getElementById('modalSizes');
-        const cardSizes   = card.querySelectorAll('.size-btn');
-        const selectedSize = card.querySelector('.size-btn.selected');
-
-        // Clone size buttons into modal
-        modalSizes.innerHTML = '';
-        cardSizes.forEach(sb => {
-            const clone = document.createElement('button');
-            clone.type       = 'button';
-            clone.className  = 'size-btn' + (sb.classList.contains('selected') ? ' selected' : '');
-            clone.textContent = sb.textContent;
-            clone.dataset.price = sb.dataset.price;
-            clone.addEventListener('click', () => {
-                modalSizes.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
-                clone.classList.add('selected');
-                const priceEl = document.querySelector('#orderModal .modal-product-price .amount');
-                if (priceEl) priceEl.textContent = clone.dataset.price;
-            });
-            modalSizes.appendChild(clone);
-        });
-
-        // Wire qty in modal
-        const modalQtyRow = document.querySelector('#orderModal .qty-row');
-        if (modalQtyRow) {
-            const minus   = modalQtyRow.querySelector('.qty-minus');
-            const plus    = modalQtyRow.querySelector('.qty-plus');
-            const display = modalQtyRow.querySelector('.qty-display');
-            display.textContent = '1';
-            minus.onclick = () => { const v = parseInt(display.textContent); if (v > 1) display.textContent = v - 1; };
-            plus.onclick  = () => { display.textContent = parseInt(display.textContent) + 1; };
-        }
-    });
-});
-</script>
 </body>
 </html>

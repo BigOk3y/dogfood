@@ -63,6 +63,79 @@
     </div>
 </nav>
 
+<!-- HERO CAROUSEL (Amazon-style, full-bleed, autoplaying) -->
+<section class="hero-carousel" id="heroCarousel" aria-roledescription="carousel" aria-label="Featured promotions" data-i18n-aria-label="home.carousel_aria">
+    <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide is-active" style="background-image:url('https://images.pexels.com/photos/8434670/pexels-photo-8434670.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600')">
+            <div class="carousel-scrim"></div>
+            <div class="container"><div class="carousel-content">
+                <span class="badge" data-i18n="home.slide1_badge">New Season</span>
+                <h2 data-i18n="home.slide1_title">Real Food. Real Ingredients. Happier Dogs.</h2>
+                <p data-i18n="home.slide1_desc">Vet-formulated meals made with whole ingredients, delivered fresh across Qatar.</p>
+                <a href="shop.html" class="btn btn-primary" data-i18n="home.slide1_cta">Shop Now →</a>
+            </div></div>
+        </div>
+        <div class="carousel-slide" style="background-image:url('https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600')">
+            <div class="carousel-scrim"></div>
+            <div class="container"><div class="carousel-content">
+                <span class="badge" data-i18n="home.slide2_badge">Bestseller</span>
+                <h2 data-i18n="home.slide2_title">Loved By 50,000+ Dogs Across Qatar</h2>
+                <p data-i18n="home.slide2_desc">Join thousands of happy pet parents who've made the switch to real nutrition.</p>
+                <a href="shop.html" class="btn btn-primary" data-i18n="home.slide2_cta">See What's Popular →</a>
+            </div></div>
+        </div>
+        <div class="carousel-slide" style="background-image:url('https://images.pexels.com/photos/8473516/pexels-photo-8473516.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600')">
+            <div class="carousel-scrim"></div>
+            <div class="container"><div class="carousel-content">
+                <span class="badge" data-i18n="home.slide3_badge">Free Delivery</span>
+                <h2 data-i18n="home.slide3_title">Free Delivery On Orders Over QAR 150</h2>
+                <p data-i18n="home.slide3_desc">Fast, reliable delivery straight to your door — order via WhatsApp in minutes.</p>
+                <a href="shop.html" class="btn btn-primary" data-i18n="home.slide3_cta">Start Shopping →</a>
+            </div></div>
+        </div>
+    </div>
+
+    <button type="button" class="carousel-arrow carousel-arrow--prev" id="carouselPrev" aria-label="Previous slide" data-i18n-aria-label="home.carousel_prev">‹</button>
+    <button type="button" class="carousel-arrow carousel-arrow--next" id="carouselNext" aria-label="Next slide" data-i18n-aria-label="home.carousel_next">›</button>
+
+    <div class="carousel-dots" id="carouselDots" role="tablist"></div>
+
+    <!-- gradient fade so the overlapping cards sit on a natural transition -->
+    <div class="carousel-fade" aria-hidden="true"></div>
+</section>
+
+<!-- SHOWCASE GRID — breaks out and overlaps the bottom edge of the carousel -->
+<section class="showcase-section">
+    <div class="container">
+        <div class="showcase-grid">
+            <a href="shop.html" class="showcase-card reveal">
+                <div class="showcase-img"><img src="https://imgur.com/W0EpPvp.png" alt="Dry Food" data-i18n-alt="home.showcase1_title" loading="lazy" width="120" height="120"></div>
+                <h3 data-i18n="home.showcase1_title">Dry Food</h3>
+                <p data-i18n="home.showcase1_desc">Protein-rich kibble for everyday feeding.</p>
+                <span class="showcase-link" data-i18n="home.showcase_cta">Shop now →</span>
+            </a>
+            <a href="shop.html" class="showcase-card reveal">
+                <div class="showcase-img"><img src="https://imgur.com/ISbBLQY.png" alt="Wet Food" data-i18n-alt="home.showcase2_title" loading="lazy" width="120" height="120"></div>
+                <h3 data-i18n="home.showcase2_title">Wet Food</h3>
+                <p data-i18n="home.showcase2_desc">Rich, flavourful meals dogs love.</p>
+                <span class="showcase-link" data-i18n="home.showcase_cta">Shop now →</span>
+            </a>
+            <a href="shop.html" class="showcase-card reveal">
+                <div class="showcase-img"><img src="https://imgur.com/5Bwou4k.png" alt="Supplements" data-i18n-alt="home.showcase3_title" loading="lazy" width="120" height="120"></div>
+                <h3 data-i18n="home.showcase3_title">Supplements</h3>
+                <p data-i18n="home.showcase3_desc">Gut health, joints, and daily wellness.</p>
+                <span class="showcase-link" data-i18n="home.showcase_cta">Shop now →</span>
+            </a>
+            <a href="shop.html" class="showcase-card reveal">
+                <div class="showcase-img"><img src="https://imgur.com/X1uKFle.png" alt="Treats" data-i18n-alt="home.showcase4_title" loading="lazy" width="120" height="120"></div>
+                <h3 data-i18n="home.showcase4_title">Treats</h3>
+                <p data-i18n="home.showcase4_desc">Reward time, the healthy way.</p>
+                <span class="showcase-link" data-i18n="home.showcase_cta">Shop now →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- HERO -->
 <section class="hero">
     <div class="container hero-inner">

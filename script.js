@@ -241,6 +241,90 @@ document.querySelectorAll('.btn-order-wa').forEach(btn => {
 })();
 
 /* ============================================================
+   HERO CAROUSEL  (Amazon-style autoplay banner)
+   ============================================================ */
+(function () {
+    const root = document.getElementById('heroCarousel');
+    if (!root) return;
+
+    const track   = document.getElementById('carouselTrack');
+    const slides  = Array.from(track.querySelectorAll('.carousel-slide'));
+    const dotsWrap = document.getElementById('carouselDots');
+    const prevBtn  = document.getElementById('carouselPrev');
+    const nextBtn  = document.getElementById('carouselNext');
+    const AUTOPLAY_MS = 5500;
+
+    if (slides.length < 2) return; // nothing to rotate
+
+    let index = Math.max(0, slides.findIndex(s => s.classList.contains('is-active')));
+    let timer = null;
+
+    // Build dots
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot' + (i === index ? ' is-active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i, true));
+        dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function render() {
+        slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    }
+
+    function goTo(i, userInitiated) {
+        index = (i + slides.length) % slides.length;
+        render();
+        if (userInitiated) restart();
+    }
+
+    function next() { goTo(index + 1); }
+    function prev() { goTo(index - 1); }
+
+    function start() {
+        timer = setInterval(next, AUTOPLAY_MS);
+    }
+    function stop() {
+        if (timer) { clearInterval(timer); timer = null; }
+    }
+    function restart() { stop(); start(); }
+
+    prevBtn.addEventListener('click', () => goTo(index - 1, true));
+    nextBtn.addEventListener('click', () => goTo(index + 1, true));
+
+    // Pause on hover / keyboard focus, resume on leave
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', start);
+
+    // Basic touch swipe support for mobile
+    let touchStartX = null;
+    root.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].clientX;
+        stop();
+    }, { passive: true });
+    root.addEventListener('touchend', e => {
+        if (touchStartX === null) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) {
+            (dx < 0) ? goTo(index + 1) : goTo(index - 1);
+        }
+        touchStartX = null;
+        start();
+    }, { passive: true });
+
+    // Pause autoplay entirely if the visitor prefers reduced motion
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    render();
+    if (!reduceMotion) start();
+})();
+
+/* ============================================================
    CONTACT FORM (contact page)
    ============================================================ */
 (function () {

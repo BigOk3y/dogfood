@@ -185,6 +185,192 @@ nav {
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
+   HERO CAROUSEL  (Amazon-style, full-bleed, autoplaying)
+   ============================================================ */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: clamp(340px, 46vw, 560px);
+    overflow: hidden;
+    background: var(--dark);
+    /* extra room at the bottom so the overlapping showcase cards
+       have space to sit on top of the image without hiding it */
+    padding-bottom: 96px;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.9s ease;
+    display: flex;
+    align-items: center;
+}
+.carousel-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+.carousel-slide > .container {
+    width: 100%;
+}
+
+.carousel-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0.05) 75%);
+}
+
+.carousel-content {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+    color: var(--white);
+}
+.carousel-content .badge { background: rgba(255,255,255,0.16); color: var(--white); }
+.carousel-content h2 {
+    font-size: clamp(1.7rem, 3.6vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+.carousel-content p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 24px;
+    max-width: 440px;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: calc(50% - 48px);
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.85);
+    color: var(--dark);
+    font-size: 1.6rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.18s, transform 0.15s;
+}
+.carousel-arrow:hover { background: var(--white); transform: translateY(-50%) scale(1.06); }
+.carousel-arrow--prev { left: 20px; }
+.carousel-arrow--next { right: 20px; }
+
+.carousel-dots {
+    position: absolute;
+    bottom: 116px;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 3;
+}
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.18s;
+}
+.carousel-dot.is-active { background: var(--white); transform: scale(1.25); }
+
+.carousel-fade {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 140px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--cream) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ============================================================
+   SHOWCASE GRID — overlaps the bottom edge of the carousel
+   ============================================================ */
+.showcase-section {
+    position: relative;
+    z-index: 4;
+    /* pulls the grid up so the cards break out over the carousel */
+    margin-top: -84px;
+    padding-bottom: 8px;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.showcase-card {
+    display: block;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px 18px 22px;
+    text-align: center;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.showcase-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.18);
+}
+.showcase-img {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--orange-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.showcase-img img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+.showcase-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+.showcase-card p {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+.showcase-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--orange);
+}
+.showcase-card:hover .showcase-link { text-decoration: underline; }
+
+/* ============================================================
    HERO
    ============================================================ */
 .hero {
@@ -695,6 +881,21 @@ nav {
         display: block;
     }
 
+    /* Hero Carousel */
+    .hero-carousel { height: clamp(420px, 92vw, 560px); padding-bottom: 76px; }
+    .carousel-content { max-width: 100%; }
+    .carousel-content p { max-width: 100%; }
+    .carousel-arrow { width: 36px; height: 36px; font-size: 1.3rem; top: calc(50% - 38px); }
+    .carousel-arrow--prev { left: 12px; }
+    .carousel-arrow--next { right: 12px; }
+    .carousel-dots { bottom: 92px; }
+
+    /* Showcase grid — smaller overlap on tablets, 2 columns */
+    .showcase-section { margin-top: -56px; }
+    .showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .showcase-card { padding: 16px 12px 18px; }
+    .showcase-img { width: 68px; height: 68px; }
+
     /* Hero */
     .hero { padding: 48px 0 40px; }
     .hero-inner { flex-direction: column; gap: 32px; }
@@ -732,6 +933,19 @@ nav {
 @media (max-width: 480px) {
     .benefits-stats { grid-template-columns: 1fr; }
     .split-image { height: 240px; }
+
+    /* On very small screens, keep the overlap subtle so cards don't
+       crowd out the carousel's headline text */
+    .hero-carousel { height: 480px; padding-bottom: 60px; }
+    .carousel-content h2 { font-size: 1.5rem; }
+    .carousel-content p { font-size: 0.9rem; margin-bottom: 18px; }
+    .carousel-dots { bottom: 76px; }
+    .carousel-arrow { display: none; }
+
+    .showcase-section { margin-top: -36px; }
+    .showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .showcase-card h3 { font-size: 0.9rem; }
+    .showcase-card p { display: none; }
 }
 
 /* ============================================================
@@ -1435,4 +1649,24 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(238,111,75,0.38); }
 [dir="rtl"] .modal-close {
     right: auto;
     left: 18px;
+}
+
+/* Hero carousel + showcase grid mirror for Arabic */
+[dir="rtl"] .carousel-content {
+    margin-left: auto;
+    text-align: right;
+}
+[dir="rtl"] .carousel-content p {
+    max-width: 100%;
+}
+[dir="rtl"] .carousel-scrim {
+    background: linear-gradient(270deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0.05) 75%);
+}
+[dir="rtl"] .carousel-arrow--prev { left: auto; right: 20px; }
+[dir="rtl"] .carousel-arrow--next { right: auto; left: 20px; }
+[dir="rtl"] .carousel-arrow { transform: translateY(-50%) scaleX(-1); }
+[dir="rtl"] .carousel-arrow:hover { transform: translateY(-50%) scaleX(-1) scale(1.06); }
+@media (max-width: 768px) {
+    [dir="rtl"] .carousel-arrow--prev { right: 12px; }
+    [dir="rtl"] .carousel-arrow--next { left: 12px; }
 }

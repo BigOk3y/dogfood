@@ -161,6 +161,23 @@ nav {
     color: var(--white);
 }
 
+/* Mobile "Shop Now" cart icon — sits next to the hamburger so
+   quick shop access doesn't require opening the menu. Hidden on
+   desktop, where the text "Shop Now" link in .nav-links covers it. */
+.nav-cart {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: var(--white);
+    flex-shrink: 0;
+    transition: background 0.15s, transform 0.1s;
+}
+.nav-cart:hover { background: rgba(255,255,255,0.18); }
+.nav-cart:active { transform: scale(0.94); }
+
 /* Hamburger */
 .nav-toggle {
     display: none;
@@ -211,7 +228,12 @@ nav {
     background-position: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.9s ease;
+    /* visibility must share the SAME duration as opacity — with this,
+       the browser defers "hidden" until the fade-out finishes, and
+       flips to "visible" instantly when fading in, so the outgoing
+       and incoming slides genuinely overlap and blend instead of
+       one cutting out before the other has faded in. */
+    transition: opacity 1s ease, visibility 1s ease;
     display: flex;
     align-items: center;
 }
@@ -863,6 +885,11 @@ nav {
 @media (max-width: 768px) {
     /* Nav */
     .nav-toggle { display: flex; }
+    .nav-cart { display: inline-flex; }
+    /* group the logo on one side and the cart + hamburger on the
+       other, instead of the desktop's 2-item space-between split */
+    .nav-container { justify-content: flex-start; gap: 4px; }
+    .navlogo { margin-inline-end: auto; }
     .nav-links {
         display: none;
         position: absolute;

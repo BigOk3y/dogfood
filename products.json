@@ -12,7 +12,7 @@
     {
       "id": "p1",
       "category": "dry",
-      "image": "https://imgur.com/W0EpPvp.png",
+      "image": "https://images.pexels.com/photos/8434744/pexels-photo-8434744.jpeg?auto=compress&cs=tinysrgb&w=600",
       "badge": { "en": "Bestseller", "ar": "الأكثر مبيعاً", "style": "badge-new" },
       "name": { "en": "Adult Chicken & Brown Rice", "ar": "دجاج وأرز بني للكلاب البالغة" },
       "desc": { "en": "High-protein formula with whole chicken, brown rice, and 20+ superfoods. Supports lean muscle and healthy digestion.", "ar": "تركيبة عالية البروتين بدجاج كامل وأرز بني وأكثر من ٢٠ غذاءً فائقاً. تدعم الكتلة العضلية والهضم الصحي." },
@@ -26,7 +26,7 @@
     {
       "id": "p2",
       "category": "dry",
-      "image": "https://imgur.com/Yqj3eRN.png",
+      "image": "https://images.pexels.com/photos/6568942/pexels-photo-6568942.jpeg?auto=compress&cs=tinysrgb&w=600",
       "badge": { "en": "Grain-Free", "ar": "خالٍ من الحبوب", "style": "" },
       "name": { "en": "Salmon & Sweet Potato", "ar": "سلمون وبطاطا حلوة" },
       "desc": { "en": "Omega-3-rich wild salmon with sweet potato and peas. Perfect for dogs with sensitive stomachs or skin conditions.", "ar": "سلمون بري غني بأوميغا-٣ مع بطاطا حلوة وبازلاء. مثالي للكلاب ذات المعدة الحساسة أو مشاكل الجلد." },
@@ -40,7 +40,7 @@
     {
       "id": "p3",
       "category": "wet",
-      "image": "https://imgur.com/ISbBLQY.png",
+      "image": "https://images.pexels.com/photos/8473523/pexels-photo-8473523.jpeg?auto=compress&cs=tinysrgb&w=600",
       "badge": { "en": "New", "ar": "جديد", "style": "badge-new" },
       "name": { "en": "Beef & Vegetable Stew", "ar": "يخنة لحم بقري وخضروات" },
       "desc": { "en": "Slow-cooked beef with garden vegetables in a rich broth. Irresistible for fussy eaters and great as a topper.", "ar": "لحم بقري مطهو ببطء مع خضروات طازجة في مرق غني. لا يُقاوَم لصعبي الإرضاء، ورائع كإضافة فوق الطعام." },
@@ -53,7 +53,7 @@
     {
       "id": "p4",
       "category": "wet",
-      "image": "https://imgur.com/7onivQN.png",
+      "image": "https://images.pexels.com/photos/8434670/pexels-photo-8434670.jpeg?auto=compress&cs=tinysrgb&w=600",
       "badge": null,
       "name": { "en": "Turkey & Pumpkin Pâté", "ar": "باتيه ديك رومي ويقطين" },
       "desc": { "en": "Smooth, grain-free pâté with lean turkey and pumpkin. Gentle on digestion, rich in natural beta-carotene.", "ar": "باتيه ناعم خالٍ من الحبوب بديك رومي قليل الدهن ويقطين. لطيف على الهضم وغني ببيتا كاروتين طبيعي." },
@@ -66,7 +66,7 @@
     {
       "id": "p5",
       "category": "supplement",
-      "image": "https://imgur.com/5Bwou4k.png",
+      "image": "https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&cs=tinysrgb&w=600",
       "badge": { "en": "Top Rated", "ar": "الأعلى تقييماً", "style": "custom-purple" },
       "name": { "en": "Probiotic & Gut Health Powder", "ar": "مسحوق بروبيوتيك لصحة الأمعاء" },
       "desc": { "en": "Daily supplement with 5 billion CFUs per serving. Promotes healthy gut flora, improves stool quality, and boosts immunity.", "ar": "مكمل يومي بـ ٥ مليارات وحدة مكوّنة للمستعمرات في كل حصة. يعزز البكتيريا النافعة، ويحسّن جودة الإخراج، ويقوّي المناعة." },
@@ -79,7 +79,7 @@
     {
       "id": "p6",
       "category": "supplement",
-      "image": "https://imgur.com/eGjCdAO.png",
+      "image": "https://images.pexels.com/photos/8473516/pexels-photo-8473516.jpeg?auto=compress&cs=tinysrgb&w=600",
       "badge": null,
       "name": { "en": "Joint & Mobility Support", "ar": "دعم المفاصل والحركة" },
       "desc": { "en": "Glucosamine, chondroitin and turmeric complex to maintain healthy joints and cartilage. Ideal for senior dogs.", "ar": "مركّب غلوكوزامين وكوندرويتين وكركم للحفاظ على مفاصل وغضاريف صحية. مثالي للكلاب المسنّة." },
@@ -92,7 +92,7 @@
     {
       "id": "p7",
       "category": "treat",
-      "image": "https://imgur.com/X1uKFle.png",
+      "image": "https://images.pexels.com/photos/8434744/pexels-photo-8434744.jpeg?auto=compress&cs=tinysrgb&w=600",
       "badge": { "en": "Bundle Deal", "ar": "عرض حزمة", "style": "badge-sale" },
       "name": { "en": "Natural Training Treats", "ar": "مكافآت تدريب طبيعية" },
       "desc": { "en": "Bite-sized, low-calorie chicken liver treats. No artificial colours or flavours. Perfect for training rewards.", "ar": "قطع صغيرة قليلة السعرات من كبد الدجاج. بلا ألوان أو نكهات صناعية. مثالية كمكافآت أثناء التدريب." },
@@ -106,7 +106,7 @@
     {
       "id": "p8",
       "category": "treat",
-      "image": "https://imgur.com/sHuQ5a9.png",
+      "image": "https://images.pexels.com/photos/6568942/pexels-photo-6568942.jpeg?auto=compress&cs=tinysrgb&w=600",
       "badge": null,
       "name": { "en": "Dental Health Chews", "ar": "قطع مضغ لصحة الأسنان" },
       "desc": { "en": "Daily chews that reduce plaque and tartar while freshening breath. Vet-recommended for dogs of all sizes.", "ar": "قطع مضغ يومية تقلّل الجير والترسبات وتُنعش النفس. موصى بها من الأطباء البيطريين لجميع أحجام الكلاب." },
@@ -120,7 +120,7 @@
     {
       "id": "p9",
       "category": "dry",
-      "image": "https://imgur.com/yDRFx0C.png",
+      "image": "https://images.pexels.com/photos/8473523/pexels-photo-8473523.jpeg?auto=compress&cs=tinysrgb&w=600",
       "badge": { "en": "Save 20%", "ar": "وفّر ٢٠٪", "style": "badge-sale" },
       "name": { "en": "New Dog Starter Bundle", "ar": "حزمة بداية للكلاب الجديدة" },
       "desc": { "en": "Everything a new dog needs: 2 kg dry food + 6 wet food cans + probiotic powder. Best way to start the journey.", "ar": "كل ما يحتاجه كلبك الجديد: ٢ كجم طعام جاف + ٦ علب طعام رطب + مسحوق بروبيوتيك. أفضل طريقة لبدء الرحلة." },

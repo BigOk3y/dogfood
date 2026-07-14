@@ -258,6 +258,7 @@ document.querySelectorAll('.btn-order-wa').forEach(btn => {
 
     let index = Math.max(0, slides.findIndex(s => s.classList.contains('is-active')));
     let timer = null;
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Build dots
     slides.forEach((_, i) => {
@@ -286,6 +287,7 @@ document.querySelectorAll('.btn-order-wa').forEach(btn => {
     function prev() { goTo(index - 1); }
 
     function start() {
+        if (timer) return; // already running — never stack a second interval
         timer = setInterval(next, AUTOPLAY_MS);
     }
     function stop() {
@@ -309,7 +311,7 @@ document.querySelectorAll('.btn-order-wa').forEach(btn => {
         stop();
     }, { passive: true });
     root.addEventListener('touchend', e => {
-        if (touchStartX === null) return;
+        if (touchStartX === null) { start(); return; }
         const dx = e.changedTouches[0].clientX - touchStartX;
         if (Math.abs(dx) > 40) {
             (dx < 0) ? goTo(index + 1) : goTo(index - 1);
@@ -318,8 +320,14 @@ document.querySelectorAll('.btn-order-wa').forEach(btn => {
         start();
     }, { passive: true });
 
+    // Pause while the tab isn't visible so slides don't "jump" several
+    // positions when the visitor comes back to it later
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop();
+        else if (!reduceMotion) start();
+    });
+
     // Pause autoplay entirely if the visitor prefers reduced motion
-    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     render();
     if (!reduceMotion) start();
 })();

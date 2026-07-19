@@ -207,12 +207,11 @@ nav {
 .hero-carousel {
     position: relative;
     width: 100%;
-    height: clamp(340px, 46vw, 560px);
+    /* taller than before so each photo shows more of itself instead
+       of being tightly cropped */
+    height: clamp(440px, 60vw, 680px);
     overflow: hidden;
-    background: var(--dark);
-    /* extra room at the bottom so the overlapping showcase cards
-       have space to sit on top of the image without hiding it */
-    padding-bottom: 96px;
+    background: var(--cream);
 }
 
 .carousel-track {
@@ -224,8 +223,6 @@ nav {
 .carousel-slide {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
     opacity: 0;
     visibility: hidden;
     /* visibility must share the SAME duration as opacity — with this,
@@ -242,13 +239,20 @@ nav {
     visibility: visible;
 }
 .carousel-slide > .container {
+    position: relative;
+    z-index: 2;
     width: 100%;
 }
 
-.carousel-scrim {
+/* Real <img> instead of a CSS background-image — object-fit: cover
+   crops to fill the frame without ever stretching/distorting it. */
+.carousel-slide-img {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0.05) 75%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .carousel-content {
@@ -256,8 +260,17 @@ nav {
     z-index: 2;
     max-width: 560px;
     color: var(--white);
+    /* text-shadow carries legibility instead of a dark tint over the
+       whole photo, so the image itself stays clean and untouched */
+    text-shadow: 0 2px 16px rgba(0,0,0,0.45), 0 1px 4px rgba(0,0,0,0.4);
 }
-.carousel-content .badge { background: rgba(255,255,255,0.16); color: var(--white); }
+.carousel-content .badge {
+    background: rgba(20,15,12,0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--white);
+    text-shadow: none;
+}
 .carousel-content h2 {
     font-size: clamp(1.7rem, 3.6vw, 2.8rem);
     font-weight: 800;
@@ -268,14 +281,14 @@ nav {
 .carousel-content p {
     font-size: 1rem;
     line-height: 1.65;
-    color: rgba(255,255,255,0.88);
+    color: rgba(255,255,255,0.92);
     margin-bottom: 24px;
     max-width: 440px;
 }
 
 .carousel-arrow {
     position: absolute;
-    top: calc(50% - 48px);
+    top: 50%;
     transform: translateY(-50%);
     width: 44px;
     height: 44px;
@@ -298,7 +311,7 @@ nav {
 
 .carousel-dots {
     position: absolute;
-    bottom: 116px;
+    bottom: 24px;
     left: 0; right: 0;
     display: flex;
     justify-content: center;
@@ -317,23 +330,22 @@ nav {
 }
 .carousel-dot.is-active { background: var(--white); transform: scale(1.25); }
 
+/* The one remaining gradient — light, and only at the very bottom
+   edge of the carousel, blending into the page background below */
 .carousel-fade {
     position: absolute;
     left: 0; right: 0; bottom: 0;
-    height: 140px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--cream) 100%);
+    height: 110px;
+    background: linear-gradient(to bottom, rgba(250,246,241,0) 0%, var(--cream) 100%);
     z-index: 2;
     pointer-events: none;
 }
 
 /* ============================================================
-   SHOWCASE GRID — overlaps the bottom edge of the carousel
+   SHOWCASE GRID — sits directly beneath the carousel
    ============================================================ */
 .showcase-section {
-    position: relative;
-    z-index: 4;
-    /* pulls the grid up so the cards break out over the carousel */
-    margin-top: -84px;
+    padding-top: 56px;
     padding-bottom: 8px;
 }
 
@@ -909,16 +921,16 @@ nav {
     }
 
     /* Hero Carousel */
-    .hero-carousel { height: clamp(420px, 92vw, 560px); padding-bottom: 76px; }
+    .hero-carousel { height: clamp(420px, 92vw, 560px); }
     .carousel-content { max-width: 100%; }
     .carousel-content p { max-width: 100%; }
-    .carousel-arrow { width: 36px; height: 36px; font-size: 1.3rem; top: calc(50% - 38px); }
+    .carousel-arrow { width: 36px; height: 36px; font-size: 1.3rem; }
     .carousel-arrow--prev { left: 12px; }
     .carousel-arrow--next { right: 12px; }
-    .carousel-dots { bottom: 92px; }
+    .carousel-dots { bottom: 16px; }
 
-    /* Showcase grid — smaller overlap on tablets, 2 columns */
-    .showcase-section { margin-top: -56px; }
+    /* Showcase grid — 2 columns on tablets */
+    .showcase-section { padding-top: 40px; }
     .showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .showcase-card { padding: 16px 12px 18px; }
     .showcase-img { width: 68px; height: 68px; }
@@ -961,15 +973,14 @@ nav {
     .benefits-stats { grid-template-columns: 1fr; }
     .split-image { height: 240px; }
 
-    /* On very small screens, keep the overlap subtle so cards don't
-       crowd out the carousel's headline text */
-    .hero-carousel { height: 480px; padding-bottom: 60px; }
+    /* Carousel stays clean and un-cropped even on small phones */
+    .hero-carousel { height: 460px; }
     .carousel-content h2 { font-size: 1.5rem; }
     .carousel-content p { font-size: 0.9rem; margin-bottom: 18px; }
-    .carousel-dots { bottom: 76px; }
+    .carousel-dots { bottom: 14px; }
     .carousel-arrow { display: none; }
 
-    .showcase-section { margin-top: -36px; }
+    .showcase-section { padding-top: 32px; }
     .showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .showcase-card h3 { font-size: 0.9rem; }
     .showcase-card p { display: none; }
@@ -1685,9 +1696,6 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(238,111,75,0.38); }
 }
 [dir="rtl"] .carousel-content p {
     max-width: 100%;
-}
-[dir="rtl"] .carousel-scrim {
-    background: linear-gradient(270deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0.05) 75%);
 }
 [dir="rtl"] .carousel-arrow--prev { left: auto; right: 20px; }
 [dir="rtl"] .carousel-arrow--next { right: auto; left: 20px; }

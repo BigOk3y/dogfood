@@ -73,8 +73,8 @@
 <!-- HERO CAROUSEL (Amazon-style, full-bleed, autoplaying) -->
 <section class="hero-carousel" id="heroCarousel" aria-roledescription="carousel" aria-label="Featured promotions" data-i18n-aria-label="home.carousel_aria">
     <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide is-active" style="background-image:url('https://images.pexels.com/photos/8434670/pexels-photo-8434670.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600')">
-            <div class="carousel-scrim"></div>
+        <div class="carousel-slide is-active">
+            <img class="carousel-slide-img" src="https://images.pexels.com/photos/8434670/pexels-photo-8434670.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="">
             <div class="container"><div class="carousel-content">
                 <span class="badge" data-i18n="home.slide1_badge">New Season</span>
                 <h2 data-i18n="home.slide1_title">Real Food. Real Ingredients. Happier Dogs.</h2>
@@ -82,8 +82,8 @@
                 <a href="shop.html" class="btn btn-primary" data-i18n="home.slide1_cta">Shop Now →</a>
             </div></div>
         </div>
-        <div class="carousel-slide" style="background-image:url('https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600')">
-            <div class="carousel-scrim"></div>
+        <div class="carousel-slide">
+            <img class="carousel-slide-img" src="https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="">
             <div class="container"><div class="carousel-content">
                 <span class="badge" data-i18n="home.slide2_badge">Bestseller</span>
                 <h2 data-i18n="home.slide2_title">Loved By 50,000+ Dogs Across Qatar</h2>
@@ -91,8 +91,8 @@
                 <a href="shop.html" class="btn btn-primary" data-i18n="home.slide2_cta">See What's Popular →</a>
             </div></div>
         </div>
-        <div class="carousel-slide" style="background-image:url('https://images.pexels.com/photos/8473516/pexels-photo-8473516.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600')">
-            <div class="carousel-scrim"></div>
+        <div class="carousel-slide">
+            <img class="carousel-slide-img" src="https://images.pexels.com/photos/8473516/pexels-photo-8473516.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="">
             <div class="container"><div class="carousel-content">
                 <span class="badge" data-i18n="home.slide3_badge">Free Delivery</span>
                 <h2 data-i18n="home.slide3_title">Free Delivery On Orders Over QAR 150</h2>
@@ -107,11 +107,11 @@
 
     <div class="carousel-dots" id="carouselDots" role="tablist"></div>
 
-    <!-- gradient fade so the overlapping cards sit on a natural transition -->
+    <!-- light fade at the bottom edge, transitioning into the page background -->
     <div class="carousel-fade" aria-hidden="true"></div>
 </section>
 
-<!-- SHOWCASE GRID — breaks out and overlaps the bottom edge of the carousel -->
+<!-- SHOWCASE GRID — sits directly beneath the carousel, no overlap -->
 <section class="showcase-section">
     <div class="container">
         <div class="showcase-grid">
